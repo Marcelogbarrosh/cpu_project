@@ -1,4 +1,8 @@
 |memory
+state[0] => ~NO_FANOUT~
+state[1] => ~NO_FANOUT~
+state[2] => ~NO_FANOUT~
+state[3] => ~NO_FANOUT~
 addr[0] => Decoder0.IN3
 addr[0] => addr_reg[0].DATAIN
 addr[1] => Decoder0.IN2

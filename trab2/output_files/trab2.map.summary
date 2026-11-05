@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Thu Nov  5 10:59:17 2026
+Analysis & Synthesis Status : Failed - Thu Nov  5 16:24:45 2026
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : trab2
-Top-level Entity Name : memory
+Top-level Entity Name : module_mini_cpu
 Family : Cyclone IV E
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
