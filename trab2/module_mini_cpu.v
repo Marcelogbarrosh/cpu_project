@@ -2,7 +2,6 @@ module module_mini_cpu (
 	input [17:0]  data,
 	input 		  button_on,
 	input			  button_send,
-	input			  rst,
 	input         clk,
 
    // Saídas para o LCD

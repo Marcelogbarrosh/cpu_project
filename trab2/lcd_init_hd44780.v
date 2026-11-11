@@ -82,8 +82,8 @@ module lcd_init_hd44780 (
     // =======================================================================
     // 1) BLOCO SEQUENCIAL: registra estado, contador de delay e índice de cmd
     // =======================================================================
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or negedge rst) begin
+        if (!rst) begin
             state      <= S_IDLE;
             delay_cnt  <= 32'd0;
             cmd_idx    <= 3'd0;
