@@ -1,5 +1,5 @@
 
-State Machine - |lcd_controller_top|state
+State Machine - |module_mini_cpu|lcd_controller_top:controller|state
 Name state.S_LINHA2 state.S_DONE state.S_WAIT state.S_PULSE_E state.S_PREPARE state.S_WAIT_INIT 
 state.S_WAIT_INIT 0 0 0 0 0 0 
 state.S_PREPARE 0 0 0 0 1 1 
@@ -8,13 +8,13 @@ state.S_WAIT 0 0 1 0 0 1
 state.S_DONE 0 1 0 0 0 1 
 state.S_LINHA2 1 0 0 0 0 1 
 
-State Machine - |lcd_controller_top|estado_tela
+State Machine - |module_mini_cpu|lcd_controller_top:controller|estado_tela
 Name estado_tela.TRACO estado_tela.OFF estado_tela.ON 
 estado_tela.OFF 0 0 0 
 estado_tela.TRACO 1 1 0 
 estado_tela.ON 0 1 1 
 
-State Machine - |lcd_controller_top|lcd_init_hd44780:lcd_init|state
+State Machine - |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state
 Name state.S_DONE state.S_WAIT state.S_PULSE state.S_SETUP state.S_POWER_WAIT state.S_IDLE 
 state.S_IDLE 0 0 0 0 0 0 
 state.S_POWER_WAIT 0 0 0 0 1 1 

@@ -1,5 +1,5 @@
 Flow report for trab2
-Wed Nov 11 16:28:31 2026
+Wed Nov 11 16:34:37 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov 11 16:28:31 2026       ;
+; Flow Status                        ; Successful - Wed Nov 11 16:34:37 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
-; Top-level Entity Name              ; lcd_controller_top                          ;
+; Top-level Entity Name              ; module_mini_cpu                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 503 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 501 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 89 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 89                                          ;
-; Total pins                         ; 39 / 529 ( 7 % )                            ;
+; Total logic elements               ; 446 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 434 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 152 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 152                                         ;
+; Total pins                         ; 33 / 529 ( 6 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -65,36 +65,36 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/11/2026 16:28:01 ;
+; Start date & time ; 11/11/2026 16:34:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; trab2               ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                      ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name        ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 238368719731896.179442528117556        ; --            ; --                 ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                 ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                 ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                 ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                 ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --                 ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                     ; <None>        ; --                 ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                 ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                 ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                 ; --                                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --                 ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; lcd_controller_top ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; lcd_controller_top ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; lcd_controller_top ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                 ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                 ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                 ; --                                ;
-; TOP_LEVEL_ENTITY                    ; lcd_controller_top                     ; trab2         ; --                 ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+-----------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                   ;
++-------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 238368719731896.179442564518384        ; --            ; --              ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --              ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                     ; <None>        ; --              ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --              ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --              ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; module_mini_cpu ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; module_mini_cpu ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; module_mini_cpu ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --              ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --              ; --                                ;
+; TOP_LEVEL_ENTITY                    ; module_mini_cpu                        ; trab2         ; --              ; --                                ;
++-------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -102,12 +102,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4861 MB             ; 00:00:20                           ;
-; Fitter               ; 00:00:14     ; 1.1                     ; 6852 MB             ; 00:00:29                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4880 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:15     ; 1.1                     ; 6852 MB             ; 00:00:28                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4999 MB             ; 00:00:02                           ;
 ; Timing Analyzer      ; 00:00:02     ; 1.2                     ; 5027 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4677 MB             ; 00:00:01                           ;
-; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:54                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4677 MB             ; 00:00:00                           ;
+; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:51                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
