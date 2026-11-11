@@ -1,5 +1,5 @@
 Analysis & Synthesis report for trab2
-Thu Nov  5 16:24:45 2026
+Wed Nov 11 13:58:56 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -11,6 +11,7 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Nov  5 16:24:45 2026           ;
+; Analysis & Synthesis Status        ; Failed - Wed Nov 11 13:58:56 2026           ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
 ; Top-level Entity Name              ; module_mini_cpu                             ;
@@ -162,23 +163,32 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Nov  5 16:24:39 2026
+    Info: Processing started: Wed Nov 11 13:58:49 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(37) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 37
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(43) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 43
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(123) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 123
-Error (10112): Ignored design unit "module_mini_cpu" at module_mini_cpu.v(1) due to previous errors File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
+Error (10170): Verilog HDL syntax error at module_mini_cpu.v(37) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 37
+Error (10170): Verilog HDL syntax error at module_mini_cpu.v(43) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 43
+Error (10170): Verilog HDL syntax error at module_mini_cpu.v(123) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 123
+Error (10112): Ignored design unit "module_mini_cpu" at module_mini_cpu.v(1) due to previous errors File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file module_mini_cpu.v
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
-    Info (12023): Found entity 1: ula File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 1
+    Info (12023): Found entity 1: ula File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
-    Info (12023): Found entity 1: memory File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
+    Info (12023): Found entity 1: memory File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_init_hd44780.v
+    Info (12023): Found entity 1: lcd_init_hd44780 File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 12
+Info (144001): Generated suppressed messages file D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.map.smsg
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
     Error: Peak virtual memory: 4728 megabytes
-    Error: Processing ended: Thu Nov  5 16:24:45 2026
-    Error: Elapsed time: 00:00:06
-    Error: Total CPU time (on all processors): 00:00:17
+    Error: Processing ended: Wed Nov 11 13:58:56 2026
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.map.smsg.
 
 

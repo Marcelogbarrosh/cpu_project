@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at module_mini_cpu.v(58): always construct contains both blocking and non-blocking assignments File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 58
+Warning (10268): Verilog HDL information at module_mini_cpu.v(58): always construct contains both blocking and non-blocking assignments File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 58
