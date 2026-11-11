@@ -153,17 +153,28 @@ module lcd_controller_top (
 				
 			end
 			ON: begin
+				message[11] = destino[3] ? "1":"0";
+				message[12] = destino[2] ? "1":"0";
+				message[13] = destino[1] ? "1":"0";
+				message[14] = destino[0] ? "1":"0";
+
 				case(opcode)
 					LOAD: begin
 						message[0] = "L";
 						message[1] = "O";
 						message[2] = "A";
 						message[3] = "D";
+						message[10] = "[";
+						
+						message[15] = "]";
+						
 					end
 					ADD: begin
 						message[0] = "A";
 						message[1] = "D";
 						message[2] = "D";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					
 					ADDI: begin
@@ -171,6 +182,8 @@ module lcd_controller_top (
 						message[1] = "D";
 						message[2] = "D";
 						message[3] = "I";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					
 					
@@ -178,32 +191,45 @@ module lcd_controller_top (
 						message[0] = "S";
 						message[1] = "U";
 						message[2] = "B";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					SUBI: begin
 						message[0] = "S";
 						message[1] = "U";
 						message[2] = "B";
 						message[3] = "I";
+						message[10] = "[";
+						message[15] = "]";
+					
 					end
 					MUL: begin
 						message[0] = "M";
 						message[1] = "U";
 						message[2] = "L";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					CLEAR: begin
 						message[0] = "C";
 						message[1] = "L";
 						message[2] = "R";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					DISPLAY: begin
 						message[0] = "D";
 						message[1] = "S";
 						message[2] = "P";
+						message[10] = "[";
+						message[15] = "]";
 					end
 					default: begin
 						message[0] = "E";
 						message[1] = "R";
 						message[2] = "R";
+						message[10] = "[";
+						message[15] = "]";
 					end
 				endcase
 			end
