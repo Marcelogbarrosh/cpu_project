@@ -1,9 +1,5 @@
 Analysis & Synthesis report for trab2
-<<<<<<< Updated upstream
-Wed Nov 11 13:58:56 2026
-=======
-Wed Nov 11 15:04:25 2026
->>>>>>> Stashed changes
+Wed Nov 11 15:53:34 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -14,10 +10,6 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-<<<<<<< Updated upstream
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
-=======
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
@@ -30,7 +22,6 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
  14. Post-Synthesis Netlist Statistics for Top Partition
  15. Elapsed Time Per Partition
  16. Analysis & Synthesis Messages
->>>>>>> Stashed changes
 
 
 
@@ -57,11 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< Updated upstream
-; Analysis & Synthesis Status        ; Failed - Wed Nov 11 13:58:56 2026           ;
-=======
-; Analysis & Synthesis Status        ; Successful - Wed Nov 11 15:04:25 2026       ;
->>>>>>> Stashed changes
+; Analysis & Synthesis Status        ; Successful - Wed Nov 11 15:53:34 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
 ; Top-level Entity Name              ; module_mini_cpu                             ;
@@ -185,9 +172,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                       ; Library ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
-; module_mini_cpu.v                ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v ;         ;
-; ula.v                            ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v             ;         ;
-; memory.v                         ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v          ;         ;
+; module_mini_cpu.v                ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v ;         ;
+; ula.v                            ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v             ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v          ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 
 
@@ -364,112 +351,86 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-<<<<<<< Updated upstream
-    Info: Processing started: Wed Nov 11 13:58:49 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(37) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 37
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(43) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 43
-Error (10170): Verilog HDL syntax error at module_mini_cpu.v(123) near text: ")";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 123
-Error (10112): Ignored design unit "module_mini_cpu" at module_mini_cpu.v(1) due to previous errors File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file module_mini_cpu.v
-=======
-    Info: Processing started: Wed Nov 11 15:04:19 2026
+    Info: Processing started: Wed Nov 11 15:53:27 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file module_mini_cpu.v
-    Info (12023): Found entity 1: module_mini_cpu File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
->>>>>>> Stashed changes
+    Info (12023): Found entity 1: module_mini_cpu File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
     Info (12023): Found entity 1: ula File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
-<<<<<<< Updated upstream
     Info (12023): Found entity 1: memory File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lcd_init_hd44780.v
     Info (12023): Found entity 1: lcd_init_hd44780 File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 12
-Info (144001): Generated suppressed messages file D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 4728 megabytes
-    Error: Processing ended: Wed Nov 11 13:58:56 2026
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:19
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.map.smsg.
-=======
-    Info (12023): Found entity 1: memory File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(162): created implicit net for "to_storage" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 162
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller_top.v
+    Info (12023): Found entity 1: lcd_controller_top File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(162): created implicit net for "to_storage" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 162
 Info (12127): Elaborating entity "module_mini_cpu" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(38): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 38
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(66): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 66
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(78): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 78
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(79): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 79
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(81): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 81
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(89): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 89
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(94): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 94
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(110): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 110
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(116): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 116
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(124): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 124
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(126): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 126
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(131): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 131
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(139): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 139
-Warning (10034): Output port "lcd_data" at module_mini_cpu.v(8) has no driver File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-Warning (10034): Output port "lcd_rs" at module_mini_cpu.v(9) has no driver File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 9
-Warning (10034): Output port "lcd_rw" at module_mini_cpu.v(10) has no driver File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
-Warning (10034): Output port "lcd_e" at module_mini_cpu.v(13) has no driver File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 13
-Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(38) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 38
-Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 163
-Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 174
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(38): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 38
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(66): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 66
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(78): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 78
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(79): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 79
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(81): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 81
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(89): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 89
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(94): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 94
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(110): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 110
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(116): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 116
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(124): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 124
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(126): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 126
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(131): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 131
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(139): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 139
+Warning (10034): Output port "lcd_data" at module_mini_cpu.v(8) has no driver File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+Warning (10034): Output port "lcd_rs" at module_mini_cpu.v(9) has no driver File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 9
+Warning (10034): Output port "lcd_rw" at module_mini_cpu.v(10) has no driver File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
+Warning (10034): Output port "lcd_e" at module_mini_cpu.v(13) has no driver File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 13
+Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(38) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 38
+Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 163
+Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 174
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_data[0]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[1]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[2]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[3]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[4]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[5]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[6]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_data[7]" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
-    Warning (13410): Pin "lcd_rs" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 9
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
-    Warning (13410): Pin "lcd_e" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 13
+    Warning (13410): Pin "lcd_data[0]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[1]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[2]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[3]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[4]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[5]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[6]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_data[7]" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 8
+    Warning (13410): Pin "lcd_rs" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 9
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
+    Warning (13410): Pin "lcd_e" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 13
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 21 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data[0]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[3]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[4]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[5]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[6]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[7]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[8]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[9]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[10]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[11]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[12]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[13]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[14]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[15]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[16]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[17]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "button_on" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 3
-    Warning (15610): No output dependent on input pin "button_send" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 4
-    Warning (15610): No output dependent on input pin "clk" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 5
+    Warning (15610): No output dependent on input pin "data[0]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[3]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[4]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[5]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[6]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[7]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[8]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[9]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[10]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[11]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[12]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[13]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[14]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[15]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[16]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[17]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "button_on" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 3
+    Warning (15610): No output dependent on input pin "button_send" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 4
+    Warning (15610): No output dependent on input pin "clk" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 5
 Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 11 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Wed Nov 11 15:04:25 2026
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:17
->>>>>>> Stashed changes
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Wed Nov 11 15:53:34 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:18
 
 

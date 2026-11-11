@@ -1,5 +1,5 @@
 Fitter report for trab2
-Wed Nov 11 15:04:36 2026
+Wed Nov 11 15:53:41 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Nov 11 15:04:36 2026       ;
+; Fitter Status                      ; Successful - Wed Nov 11 15:53:41 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
 ; Top-level Entity Name              ; module_mini_cpu                             ;
@@ -193,7 +193,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/output_files/trab2.pin.
+The pin-out file can be found in D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1567,17 +1567,17 @@ Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
-Info (144001): Generated suppressed messages file D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/output_files/trab2.fit.smsg
+Info (144001): Generated suppressed messages file D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 6837 megabytes
-    Info: Processing ended: Wed Nov 11 15:04:36 2026
-    Info: Elapsed time: 00:00:10
+    Info: Processing ended: Wed Nov 11 15:53:42 2026
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:15
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/output_files/trab2.fit.smsg.
+The suppressed messages can be found in D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/trab2.fit.smsg.
 
 

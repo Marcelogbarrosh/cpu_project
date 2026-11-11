@@ -328,17 +328,17 @@ clk => state[0].CLK
 clk => state[1].CLK
 clk => state[2].CLK
 clk => state[3].CLK
-lcd_data[0] <= <GND>
-lcd_data[1] <= <GND>
-lcd_data[2] <= <GND>
-lcd_data[3] <= <GND>
-lcd_data[4] <= <GND>
-lcd_data[5] <= <GND>
-lcd_data[6] <= <GND>
-lcd_data[7] <= <GND>
-lcd_rs <= <GND>
-lcd_rw <= <GND>
-lcd_e <= <GND>
+lcd_data[0] << <GND>
+lcd_data[1] << <GND>
+lcd_data[2] << <GND>
+lcd_data[3] << <GND>
+lcd_data[4] << <GND>
+lcd_data[5] << <GND>
+lcd_data[6] << <GND>
+lcd_data[7] << <GND>
+lcd_rs << <GND>
+lcd_rw << <GND>
+lcd_e << <GND>
 
 
 |module_mini_cpu|ula:alu

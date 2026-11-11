@@ -4,6 +4,7 @@ module lcd_controller_top (
     input  wire       rst,
 	 input wire[2:0]    opcode,
 	 input wire[3:0]   destino,
+	 input wire [15:0]  valor_destino,
 	 input wire 		button_on,
 	 input wire 		button_send,
     // Saídas para o LCD
@@ -110,6 +111,38 @@ module lcd_controller_top (
 	
     integer i;
 	 
+	 wire eh_negativo =  valor_destino[15];
+	 wire [15:0]absoluto = eh_negativo ? (~valor_destino + 16'd1): valor_destino;
+	 
+	 reg [19:0] bcd;
+    reg [3:0] d4, d3, d2, d1, d0;
+    integer j;
+
+    // Bloco combinacional para a conversão Binário -> BCD (Shift and Add 3)
+    always @(*) begin
+        bcd = 20'd0; // Inicializa com zero
+        
+        for (j = 15; j >= 0; j = j - 1) begin
+            // Passo 1: Se um dígito (nibble) for >= 5, soma 3
+            if (bcd[3:0]   >= 4'd5) bcd[3:0]   = bcd[3:0]   + 4'd3;
+            if (bcd[7:4]   >= 4'd5) bcd[7:4]   = bcd[7:4]   + 4'd3;
+            if (bcd[11:8]  >= 4'd5) bcd[11:8]  = bcd[11:8]  + 4'd3;
+            if (bcd[15:12] >= 4'd5) bcd[15:12] = bcd[15:12] + 4'd3;
+            if (bcd[19:16] >= 4'd5) bcd[19:16] = bcd[19:16] + 4'd3;
+            
+            // Passo 2: Shift para a esquerda, puxando o MSB atual do valor binário
+            bcd = {bcd[18:0], absoluto[j]};
+        end
+        
+        // Extrai os dígitos isolados para facilitar o uso
+        d4 = bcd[19:16]; // Dezenas de milhar
+        d3 = bcd[15:12]; // Unidades de milhar
+        d2 = bcd[11:8];  // Centenas
+        d1 = bcd[7:4];   // Dezenas
+        d0 = bcd[3:0];   // Unidades
+    end
+	 
+	 //imprimo de acordo com o estado da tela
 	 always@(*) begin
 		for (i =0; i < 32; i = i + 1)begin
 			message[i] = " ";
@@ -153,10 +186,8 @@ module lcd_controller_top (
 				
 			end
 			ON: begin
-				message[11] = destino[3] ? "1":"0";
-				message[12] = destino[2] ? "1":"0";
-				message[13] = destino[1] ? "1":"0";
-				message[14] = destino[0] ? "1":"0";
+			
+				
 
 				case(opcode)
 					LOAD: begin
@@ -164,17 +195,13 @@ module lcd_controller_top (
 						message[1] = "O";
 						message[2] = "A";
 						message[3] = "D";
-						message[10] = "[";
-						
-						message[15] = "]";
+
 						
 					end
 					ADD: begin
 						message[0] = "A";
 						message[1] = "D";
 						message[2] = "D";
-						message[10] = "[";
-						message[15] = "]";
 					end
 					
 					ADDI: begin
@@ -182,8 +209,7 @@ module lcd_controller_top (
 						message[1] = "D";
 						message[2] = "D";
 						message[3] = "I";
-						message[10] = "[";
-						message[15] = "]";
+						
 					end
 					
 					
@@ -191,47 +217,57 @@ module lcd_controller_top (
 						message[0] = "S";
 						message[1] = "U";
 						message[2] = "B";
-						message[10] = "[";
-						message[15] = "]";
+						
 					end
 					SUBI: begin
 						message[0] = "S";
 						message[1] = "U";
 						message[2] = "B";
 						message[3] = "I";
-						message[10] = "[";
-						message[15] = "]";
+						
 					
 					end
 					MUL: begin
 						message[0] = "M";
 						message[1] = "U";
 						message[2] = "L";
-						message[10] = "[";
-						message[15] = "]";
+						
 					end
 					CLEAR: begin
 						message[0] = "C";
 						message[1] = "L";
 						message[2] = "R";
-						message[10] = "[";
-						message[15] = "]";
+						
 					end
 					DISPLAY: begin
 						message[0] = "D";
 						message[1] = "S";
 						message[2] = "P";
-						message[10] = "[";
-						message[15] = "]";
+					
 					end
 					default: begin
 						message[0] = "E";
 						message[1] = "R";
 						message[2] = "R";
-						message[10] = "[";
-						message[15] = "]";
+						
 					end
 				endcase
+				if(opcode != CLEAR) begin
+					message[10] = "[";
+					message[11] = destino[3] ? "1" : "0";
+					message[12] = destino[2] ? "1" : "0";
+					message[13] = destino[1] ? "1" : "0";
+					message[14] = destino[0] ? "1" : "0"; // da pra fazer isso pq é só um bit, mas se nao fosse, soma o valor com o cod ASCII (PARTE DO 26-31)
+					message[15] = "]";
+					message[26] = eh_negativo ? "-" : "+";
+					message[27] = d4 + 8'h30;
+					message[28] = d3 + 8'h30;
+					message[29] = d2 + 8'h30;
+					message[30] = d1 + 8'h30;
+					message[31] = d0 + 8'h30;
+					
+				end
+					
 			end
 		 endcase
 	 end
@@ -332,7 +368,7 @@ module lcd_controller_top (
                         next_msg_index = msg_index + 1;
                         next_state     = S_PREPARE;
                     end 
-								
+					 end
             end
 				S_LINHA2: begin
 					next_state = S_PULSE_E;

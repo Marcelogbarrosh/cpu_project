@@ -1,8 +1,10 @@
 vendor_name = ModelSim
-source_file = 1, D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v
-source_file = 1, D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v
-source_file = 1, D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v
-source_file = 1, D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/db/trab2.cbx.xml
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v
+source_file = 1, D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/db/trab2.cbx.xml
 design_name = module_mini_cpu
 instance = comp, \lcd_data[0]~output , lcd_data[0]~output, module_mini_cpu, 1
 instance = comp, \lcd_data[1]~output , lcd_data[1]~output, module_mini_cpu, 1
