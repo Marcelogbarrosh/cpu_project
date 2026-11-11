@@ -2,7 +2,160 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "lcd_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_rs",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_e",
+					"strict" : false
+				},
+				{
+					"name" : "sinal",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[15]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[14]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[13]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[12]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[11]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[10]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[9]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[8]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[7]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[6]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[5]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[4]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[3]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[1]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[0]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[1]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[2]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[0]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[3]",
+					"strict" : false
+				},
+				{
+					"name" : "button_send",
+					"strict" : false
+				},
+				{
+					"name" : "button_on",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

@@ -2,6 +2,7 @@ module module_mini_cpu (
 	input [17:0]  data,
 	input 		  button_on,
 	input			  button_send,
+	input			  rst,
 	input         clk,
 
    // Saídas para o LCD
@@ -32,22 +33,20 @@ module module_mini_cpu (
 	reg			start = 0;	//indica se o armazemento de informação deve começar
 	reg			start_lcd = 1;	//indica se o lcd deve atualizar
 	reg			finish_lcd = 0;	//indica se o lcd já atualizou(permite que a cpu mude de estado)
+			
+	wire			done;		//verifica se o lcd ja atualizou no modulo
 	
 	//sequencial
 	always@ (*) begin
 		case(state)
 			LCD_FETCH: begin
-				if(start_lcd) begin
-					//modulo lcd
-					
+				if(start_lcd && done) begin
 					finish_lcd <= 1;
 				end
 			end
 			
 			OFF: begin
-				if(start_lcd) begin
-					//modulo lcd
-					
+				if(start_lcd && done) begin
 					finish_lcd <= 1;
 				end
 			end
@@ -171,6 +170,23 @@ module module_mini_cpu (
 		.op			(opcode),
 		.q				(ram_reg),
 		.finish		(finish)
+	);
+	
+	
+	lcd_controller_top controller (
+		.clk						(clk),
+		.rst						(start_lcd),
+		.opcode					(opcode),
+		.destino					(reg1),
+		.valor_destino			(ram_reg),
+		.button_on				(button_on),
+		.button_send			(button_send),
+    // Saídas para o LCD
+		.lcd_data					(lcd_data),
+		.lcd_rs					(lcd_rs),
+		.lcd_rw					(lcd_rw),
+		.lcd_e						(lcd_e),
+		.sinal						(done)
 	);
 	
 	

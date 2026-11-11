@@ -11,7 +11,8 @@ module lcd_controller_top (
     output wire  [7:0] lcd_data,
     output wire        lcd_rs,
     output wire        lcd_rw,
-    output wire        lcd_e
+    output wire        lcd_e,
+	 output reg			  sinal
 );
 	
     // -----------------------------------------------------------------------
@@ -59,7 +60,7 @@ module lcd_controller_top (
 	 reg button_send_bef;
 	 
 	 always@(posedge clk or negedge rst)begin
-		if (rst)begin
+		if (!rst)begin
 			button_on_bef <= 1'b1;
 			button_send_bef <=1'b1;
 			
@@ -329,6 +330,7 @@ module lcd_controller_top (
                 if (init_done) begin
                     next_state     = S_PREPARE;
                     next_msg_index = 5'd0;
+						  sinal = 0;
                 end
             end
 
@@ -382,6 +384,7 @@ module lcd_controller_top (
             S_DONE: begin
                 // Permanece nesse estado até reset
                 next_state = S_DONE;
+					 sinal = 1;
             end
 
             default: begin
