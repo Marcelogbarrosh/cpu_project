@@ -20,6 +20,7 @@ module memory
 			LOAD: begin
 				if(we) ram[addr] <= data;
 				addr_reg <= addr;
+				q <= ram[addr_reg];
 				finish <= 1;
 			end
 			CLEAR: begin
@@ -39,14 +40,11 @@ module memory
 				ram[13] <= 0;
 				ram[14] <= 0;
 				ram[15] <= 0;
+				q <= ram[addr_reg];
 				finish <= 1;
 			end
 			default: finish <= 0;
 		endcase
-	end
-	
-	always@(*) begin
-		q = ram[addr_reg];
 	end
 
 endmodule

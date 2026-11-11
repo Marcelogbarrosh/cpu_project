@@ -1,5 +1,5 @@
 module ula 
-(
+(	
 	input [3:0] state,
 	input signed [15:0] n1,
 	input signed [15:0] n2,
