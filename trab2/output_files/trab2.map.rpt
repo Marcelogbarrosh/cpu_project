@@ -1,5 +1,5 @@
 Analysis & Synthesis report for trab2
-Thu Nov 12 16:58:37 2026
+Thu Nov 12 15:09:54 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,17 +13,26 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |lcd_controller_top|state
-  9. State Machine - |lcd_controller_top|estado_tela
- 10. State Machine - |lcd_controller_top|lcd_init_hd44780:lcd_init|state
+  8. State Machine - |module_mini_cpu|lcd_controller_top:controller|state
+  9. State Machine - |module_mini_cpu|lcd_controller_top:controller|estado_tela
+ 10. State Machine - |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state
  11. User-Specified and Inferred Latches
  12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |module_mini_cpu
+ 18. Parameter Settings for User Entity Instance: ula:alu
+ 19. Parameter Settings for User Entity Instance: memory:mem
+ 20. Parameter Settings for Inferred Entity Instance: ula:alu|lpm_mult:Mult0
+ 21. lpm_mult Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "lcd_controller_top:controller"
+ 23. Port Connectivity Checks: "memory:mem"
+ 24. Port Connectivity Checks: "ula:alu"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +59,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 12 16:58:37 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 12 15:09:54 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
-; Top-level Entity Name              ; lcd_controller_top                          ;
+; Top-level Entity Name              ; module_mini_cpu                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 620                                         ;
-;     Total combinational functions  ; 618                                         ;
-;     Dedicated logic registers      ; 91                                          ;
-; Total registers                    ; 91                                          ;
-; Total pins                         ; 39                                          ;
+; Total logic elements               ; 456                                         ;
+;     Total combinational functions  ; 432                                         ;
+;     Dedicated logic registers      ; 154                                         ;
+; Total registers                    ; 154                                         ;
+; Total pins                         ; 32                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -73,7 +82,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; lcd_controller_top ; trab2              ;
+; Top-level entity name                                            ; module_mini_cpu    ; trab2              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -176,8 +185,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; module_mini_cpu.v                ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v    ;         ;
+; ula.v                            ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v                ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v             ;         ;
 ; lcd_init_hd44780.v               ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v   ;         ;
 ; lcd_controller_top.v             ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf           ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/aglobal211.inc         ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc        ;         ;
+; multcore.inc                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/multcore.inc           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/bypassff.inc           ;         ;
+; altshift.inc                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/altshift.inc           ;         ;
+; multcore.tdf                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/multcore.tdf           ;         ;
+; csa_add.inc                      ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/csa_add.inc            ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/mpar_add.inc           ;         ;
+; muleabz.inc                      ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/muleabz.inc            ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/mul_lfrg.inc           ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/mul_boothc.inc         ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/alt_ded_mult.inc       ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc     ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/dffpipe.inc            ;         ;
+; altshift.tdf                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/altshift.tdf           ;         ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
 
 
@@ -186,47 +214,50 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 620       ;
+; Estimated Total logic elements              ; 456       ;
 ;                                             ;           ;
-; Total combinational functions               ; 618       ;
+; Total combinational functions               ; 432       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 340       ;
-;     -- 3 input functions                    ; 102       ;
-;     -- <=2 input functions                  ; 176       ;
+;     -- 4 input functions                    ; 263       ;
+;     -- 3 input functions                    ; 62        ;
+;     -- <=2 input functions                  ; 107       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 506       ;
-;     -- arithmetic mode                      ; 112       ;
+;     -- normal mode                          ; 366       ;
+;     -- arithmetic mode                      ; 66        ;
 ;                                             ;           ;
-; Total registers                             ; 91        ;
-;     -- Dedicated logic registers            ; 91        ;
+; Total registers                             ; 154       ;
+;     -- Dedicated logic registers            ; 154       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 39        ;
+; I/O pins                                    ; 32        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 91        ;
-; Total fan-out                               ; 2375      ;
-; Average fan-out                             ; 3.02      ;
+; Maximum fan-out                             ; 132       ;
+; Total fan-out                               ; 1887      ;
+; Average fan-out                             ; 2.90      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name        ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; |lcd_controller_top            ; 618 (517)           ; 91 (50)                   ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |lcd_controller_top                           ; lcd_controller_top ; work         ;
-;    |lcd_init_hd44780:lcd_init| ; 101 (101)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_controller_top|lcd_init_hd44780:lcd_init ; lcd_init_hd44780   ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name        ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
+; |module_mini_cpu                   ; 432 (68)            ; 154 (41)                  ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |module_mini_cpu                                                         ; module_mini_cpu    ; work         ;
+;    |lcd_controller_top:controller| ; 284 (184)           ; 91 (50)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller                           ; lcd_controller_top ; work         ;
+;       |lcd_init_hd44780:lcd_init|  ; 100 (100)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init ; lcd_init_hd44780   ; work         ;
+;    |memory:mem|                    ; 79 (79)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|memory:mem                                              ; memory             ; work         ;
+;    |ula:alu|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|ula:alu                                                 ; ula                ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lcd_controller_top|state                                                                                                                       ;
+; State Machine - |module_mini_cpu|lcd_controller_top:controller|state                                                                                            ;
 +-------------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
 ; Name              ; state.S_CMD_WAIT ; state.S_CMD_PULSE ; state.S_LINHA2 ; state.S_DONE ; state.S_WAIT ; state.S_PULSE_E ; state.S_PREPARE ; state.S_WAIT_INIT ;
 +-------------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
@@ -242,20 +273,20 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------+
-; State Machine - |lcd_controller_top|estado_tela                          ;
-+-------------------+-------------------+-----------------+----------------+
-; Name              ; estado_tela.TRACO ; estado_tela.OFF ; estado_tela.ON ;
-+-------------------+-------------------+-----------------+----------------+
-; estado_tela.OFF   ; 0                 ; 0               ; 0              ;
-; estado_tela.TRACO ; 1                 ; 1               ; 0              ;
-; estado_tela.ON    ; 0                 ; 1               ; 1              ;
-+-------------------+-------------------+-----------------+----------------+
++----------------------------------------------------------------------------+
+; State Machine - |module_mini_cpu|lcd_controller_top:controller|estado_tela ;
++-------------------+-------------------+-----------------+------------------+
+; Name              ; estado_tela.TRACO ; estado_tela.OFF ; estado_tela.ON   ;
++-------------------+-------------------+-----------------+------------------+
+; estado_tela.OFF   ; 0                 ; 0               ; 0                ;
+; estado_tela.TRACO ; 1                 ; 1               ; 0                ;
+; estado_tela.ON    ; 0                 ; 1               ; 1                ;
++-------------------+-------------------+-----------------+------------------+
 
 
 Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lcd_controller_top|lcd_init_hd44780:lcd_init|state                                                  ;
+; State Machine - |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state                       ;
 +--------------------+--------------+--------------+---------------+---------------+--------------------+--------------+
 ; Name               ; state.S_DONE ; state.S_WAIT ; state.S_PULSE ; state.S_SETUP ; state.S_POWER_WAIT ; state.S_IDLE ;
 +--------------------+--------------+--------------+---------------+---------------+--------------------+--------------+
@@ -268,62 +299,533 @@ Encoding Type:  One-Hot
 +--------------------+--------------+--------------+---------------+---------------+--------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; sinal$latch                                         ; Selector3           ; yes                    ;
-; count[31]                                           ; count[31]           ; yes                    ;
-; count[30]                                           ; count[31]           ; yes                    ;
-; count[29]                                           ; count[31]           ; yes                    ;
-; count[28]                                           ; count[31]           ; yes                    ;
-; count[27]                                           ; count[31]           ; yes                    ;
-; count[26]                                           ; count[31]           ; yes                    ;
-; count[25]                                           ; count[31]           ; yes                    ;
-; count[24]                                           ; count[31]           ; yes                    ;
-; count[23]                                           ; count[31]           ; yes                    ;
-; count[22]                                           ; count[31]           ; yes                    ;
-; count[21]                                           ; count[31]           ; yes                    ;
-; count[20]                                           ; count[31]           ; yes                    ;
-; count[19]                                           ; count[31]           ; yes                    ;
-; count[18]                                           ; count[31]           ; yes                    ;
-; count[17]                                           ; count[31]           ; yes                    ;
-; count[16]                                           ; count[31]           ; yes                    ;
-; count[15]                                           ; count[31]           ; yes                    ;
-; count[14]                                           ; count[31]           ; yes                    ;
-; count[13]                                           ; count[31]           ; yes                    ;
-; count[12]                                           ; count[31]           ; yes                    ;
-; count[11]                                           ; count[31]           ; yes                    ;
-; count[10]                                           ; count[31]           ; yes                    ;
-; count[9]                                            ; count[31]           ; yes                    ;
-; count[8]                                            ; count[31]           ; yes                    ;
-; count[7]                                            ; count[31]           ; yes                    ;
-; count[6]                                            ; count[31]           ; yes                    ;
-; count[5]                                            ; count[31]           ; yes                    ;
-; count[4]                                            ; count[31]           ; yes                    ;
-; count[3]                                            ; count[31]           ; yes                    ;
-; count[2]                                            ; count[31]           ; yes                    ;
-; count[1]                                            ; count[31]           ; yes                    ;
-; count[0]                                            ; count[31]           ; yes                    ;
-; Number of user-specified and inferred latches = 33  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                    ;
++----------------------------------------------------+------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                      ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------------------------+------------------------+
+; finish_lcd                                         ; Selector4                                ; yes                    ;
+; lcd_controller_top:controller|sinal                ; lcd_controller_top:controller|Selector39 ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                                          ;                        ;
++----------------------------------------------------+------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state~12                              ; Lost fanout        ;
-; state~13                              ; Lost fanout        ;
-; state~14                              ; Lost fanout        ;
-; lcd_init_hd44780:lcd_init|state~4     ; Lost fanout        ;
-; lcd_init_hd44780:lcd_init|state~5     ; Lost fanout        ;
-; lcd_init_hd44780:lcd_init|state~6     ; Lost fanout        ;
-; Total Number of Removed Registers = 6 ;                    ;
-+---------------------------------------+--------------------+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++-----------------------------------------------------------------+----------------------------------------+
+; Register name                                                   ; Reason for Removal                     ;
++-----------------------------------------------------------------+----------------------------------------+
+; imm[7]                                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|q[1..9,11..15]                                       ; Merged with memory:mem|q[10]           ;
+; memory:mem|ram[15][11]                                          ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][12]                                          ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][13]                                          ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][14]                                          ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][15]                                          ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][1]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][2]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][3]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][4]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][5]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][6]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][7]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][8]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[15][9]                                           ; Merged with memory:mem|ram[15][10]     ;
+; memory:mem|ram[14][11]                                          ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][12]                                          ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][13]                                          ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][14]                                          ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][15]                                          ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][1]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][2]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][3]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][4]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][5]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][6]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][7]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][8]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[14][9]                                           ; Merged with memory:mem|ram[14][10]     ;
+; memory:mem|ram[13][11]                                          ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][12]                                          ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][13]                                          ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][14]                                          ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][15]                                          ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][1]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][2]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][3]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][4]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][5]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][6]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][7]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][8]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[13][9]                                           ; Merged with memory:mem|ram[13][10]     ;
+; memory:mem|ram[12][11]                                          ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][12]                                          ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][13]                                          ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][14]                                          ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][15]                                          ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][1]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][2]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][3]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][4]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][5]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][6]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][7]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][8]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[12][9]                                           ; Merged with memory:mem|ram[12][10]     ;
+; memory:mem|ram[11][11]                                          ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][12]                                          ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][13]                                          ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][14]                                          ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][15]                                          ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][1]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][2]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][3]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][4]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][5]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][6]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][7]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][8]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[11][9]                                           ; Merged with memory:mem|ram[11][10]     ;
+; memory:mem|ram[10][11]                                          ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][12]                                          ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][13]                                          ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][14]                                          ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][15]                                          ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][1]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][2]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][3]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][4]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][5]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][6]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][7]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][8]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[10][9]                                           ; Merged with memory:mem|ram[10][10]     ;
+; memory:mem|ram[9][11]                                           ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][12]                                           ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][13]                                           ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][14]                                           ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][15]                                           ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][1]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][2]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][3]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][4]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][5]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][6]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][7]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][8]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[9][9]                                            ; Merged with memory:mem|ram[9][10]      ;
+; memory:mem|ram[8][11]                                           ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][12]                                           ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][13]                                           ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][14]                                           ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][15]                                           ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][1]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][2]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][3]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][4]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][5]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][6]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][7]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][8]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[8][9]                                            ; Merged with memory:mem|ram[8][10]      ;
+; memory:mem|ram[7][11]                                           ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][12]                                           ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][13]                                           ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][14]                                           ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][15]                                           ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][1]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][2]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][3]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][4]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][5]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][6]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][7]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][8]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[7][9]                                            ; Merged with memory:mem|ram[7][10]      ;
+; memory:mem|ram[6][11]                                           ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][12]                                           ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][13]                                           ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][14]                                           ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][15]                                           ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][1]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][2]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][3]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][4]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][5]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][6]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][7]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][8]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[6][9]                                            ; Merged with memory:mem|ram[6][10]      ;
+; memory:mem|ram[5][11]                                           ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][12]                                           ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][13]                                           ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][14]                                           ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][15]                                           ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][1]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][2]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][3]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][4]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][5]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][6]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][7]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][8]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[5][9]                                            ; Merged with memory:mem|ram[5][10]      ;
+; memory:mem|ram[4][11]                                           ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][12]                                           ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][13]                                           ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][14]                                           ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][15]                                           ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][1]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][2]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][3]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][4]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][5]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][6]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][7]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][8]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[4][9]                                            ; Merged with memory:mem|ram[4][10]      ;
+; memory:mem|ram[3][11]                                           ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][12]                                           ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][13]                                           ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][14]                                           ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][15]                                           ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][1]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][2]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][3]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][4]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][5]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][6]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][7]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][8]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[3][9]                                            ; Merged with memory:mem|ram[3][10]      ;
+; memory:mem|ram[2][11]                                           ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][12]                                           ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][13]                                           ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][14]                                           ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][15]                                           ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][1]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][2]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][3]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][4]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][5]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][6]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][7]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][8]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[2][9]                                            ; Merged with memory:mem|ram[2][10]      ;
+; memory:mem|ram[1][11]                                           ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][12]                                           ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][13]                                           ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][14]                                           ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][15]                                           ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][1]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][2]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][3]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][4]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][5]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][6]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][7]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][8]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[1][9]                                            ; Merged with memory:mem|ram[1][10]      ;
+; memory:mem|ram[0][11]                                           ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][12]                                           ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][13]                                           ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][14]                                           ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][15]                                           ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][1]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][2]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][3]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][4]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][5]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][6]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][7]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][8]                                            ; Merged with memory:mem|ram[0][10]      ;
+; memory:mem|ram[0][9]                                            ; Merged with memory:mem|ram[0][10]      ;
+; ram[15][11]                                                     ; Merged with ram[15][10]                ;
+; ram[15][12]                                                     ; Merged with ram[15][10]                ;
+; ram[15][13]                                                     ; Merged with ram[15][10]                ;
+; ram[15][14]                                                     ; Merged with ram[15][10]                ;
+; ram[15][15]                                                     ; Merged with ram[15][10]                ;
+; ram[15][1]                                                      ; Merged with ram[15][10]                ;
+; ram[15][2]                                                      ; Merged with ram[15][10]                ;
+; ram[15][3]                                                      ; Merged with ram[15][10]                ;
+; ram[15][4]                                                      ; Merged with ram[15][10]                ;
+; ram[15][5]                                                      ; Merged with ram[15][10]                ;
+; ram[15][6]                                                      ; Merged with ram[15][10]                ;
+; ram[15][7]                                                      ; Merged with ram[15][10]                ;
+; ram[15][8]                                                      ; Merged with ram[15][10]                ;
+; ram[15][9]                                                      ; Merged with ram[15][10]                ;
+; ram[14][11]                                                     ; Merged with ram[14][10]                ;
+; ram[14][12]                                                     ; Merged with ram[14][10]                ;
+; ram[14][13]                                                     ; Merged with ram[14][10]                ;
+; ram[14][14]                                                     ; Merged with ram[14][10]                ;
+; ram[14][15]                                                     ; Merged with ram[14][10]                ;
+; ram[14][1]                                                      ; Merged with ram[14][10]                ;
+; ram[14][2]                                                      ; Merged with ram[14][10]                ;
+; ram[14][3]                                                      ; Merged with ram[14][10]                ;
+; ram[14][4]                                                      ; Merged with ram[14][10]                ;
+; ram[14][5]                                                      ; Merged with ram[14][10]                ;
+; ram[14][6]                                                      ; Merged with ram[14][10]                ;
+; ram[14][7]                                                      ; Merged with ram[14][10]                ;
+; ram[14][8]                                                      ; Merged with ram[14][10]                ;
+; ram[14][9]                                                      ; Merged with ram[14][10]                ;
+; ram[13][11]                                                     ; Merged with ram[13][10]                ;
+; ram[13][12]                                                     ; Merged with ram[13][10]                ;
+; ram[13][13]                                                     ; Merged with ram[13][10]                ;
+; ram[13][14]                                                     ; Merged with ram[13][10]                ;
+; ram[13][15]                                                     ; Merged with ram[13][10]                ;
+; ram[13][1]                                                      ; Merged with ram[13][10]                ;
+; ram[13][2]                                                      ; Merged with ram[13][10]                ;
+; ram[13][3]                                                      ; Merged with ram[13][10]                ;
+; ram[13][4]                                                      ; Merged with ram[13][10]                ;
+; ram[13][5]                                                      ; Merged with ram[13][10]                ;
+; ram[13][6]                                                      ; Merged with ram[13][10]                ;
+; ram[13][7]                                                      ; Merged with ram[13][10]                ;
+; ram[13][8]                                                      ; Merged with ram[13][10]                ;
+; ram[13][9]                                                      ; Merged with ram[13][10]                ;
+; ram[12][11]                                                     ; Merged with ram[12][10]                ;
+; ram[12][12]                                                     ; Merged with ram[12][10]                ;
+; ram[12][13]                                                     ; Merged with ram[12][10]                ;
+; ram[12][14]                                                     ; Merged with ram[12][10]                ;
+; ram[12][15]                                                     ; Merged with ram[12][10]                ;
+; ram[12][1]                                                      ; Merged with ram[12][10]                ;
+; ram[12][2]                                                      ; Merged with ram[12][10]                ;
+; ram[12][3]                                                      ; Merged with ram[12][10]                ;
+; ram[12][4]                                                      ; Merged with ram[12][10]                ;
+; ram[12][5]                                                      ; Merged with ram[12][10]                ;
+; ram[12][6]                                                      ; Merged with ram[12][10]                ;
+; ram[12][7]                                                      ; Merged with ram[12][10]                ;
+; ram[12][8]                                                      ; Merged with ram[12][10]                ;
+; ram[12][9]                                                      ; Merged with ram[12][10]                ;
+; ram[11][11]                                                     ; Merged with ram[11][10]                ;
+; ram[11][12]                                                     ; Merged with ram[11][10]                ;
+; ram[11][13]                                                     ; Merged with ram[11][10]                ;
+; ram[11][14]                                                     ; Merged with ram[11][10]                ;
+; ram[11][15]                                                     ; Merged with ram[11][10]                ;
+; ram[11][1]                                                      ; Merged with ram[11][10]                ;
+; ram[11][2]                                                      ; Merged with ram[11][10]                ;
+; ram[11][3]                                                      ; Merged with ram[11][10]                ;
+; ram[11][4]                                                      ; Merged with ram[11][10]                ;
+; ram[11][5]                                                      ; Merged with ram[11][10]                ;
+; ram[11][6]                                                      ; Merged with ram[11][10]                ;
+; ram[11][7]                                                      ; Merged with ram[11][10]                ;
+; ram[11][8]                                                      ; Merged with ram[11][10]                ;
+; ram[11][9]                                                      ; Merged with ram[11][10]                ;
+; ram[10][11]                                                     ; Merged with ram[10][10]                ;
+; ram[10][12]                                                     ; Merged with ram[10][10]                ;
+; ram[10][13]                                                     ; Merged with ram[10][10]                ;
+; ram[10][14]                                                     ; Merged with ram[10][10]                ;
+; ram[10][15]                                                     ; Merged with ram[10][10]                ;
+; ram[10][1]                                                      ; Merged with ram[10][10]                ;
+; ram[10][2]                                                      ; Merged with ram[10][10]                ;
+; ram[10][3]                                                      ; Merged with ram[10][10]                ;
+; ram[10][4]                                                      ; Merged with ram[10][10]                ;
+; ram[10][5]                                                      ; Merged with ram[10][10]                ;
+; ram[10][6]                                                      ; Merged with ram[10][10]                ;
+; ram[10][7]                                                      ; Merged with ram[10][10]                ;
+; ram[10][8]                                                      ; Merged with ram[10][10]                ;
+; ram[10][9]                                                      ; Merged with ram[10][10]                ;
+; ram[9][11]                                                      ; Merged with ram[9][10]                 ;
+; ram[9][12]                                                      ; Merged with ram[9][10]                 ;
+; ram[9][13]                                                      ; Merged with ram[9][10]                 ;
+; ram[9][14]                                                      ; Merged with ram[9][10]                 ;
+; ram[9][15]                                                      ; Merged with ram[9][10]                 ;
+; ram[9][1]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][2]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][3]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][4]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][5]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][6]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][7]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][8]                                                       ; Merged with ram[9][10]                 ;
+; ram[9][9]                                                       ; Merged with ram[9][10]                 ;
+; ram[8][11]                                                      ; Merged with ram[8][10]                 ;
+; ram[8][12]                                                      ; Merged with ram[8][10]                 ;
+; ram[8][13]                                                      ; Merged with ram[8][10]                 ;
+; ram[8][14]                                                      ; Merged with ram[8][10]                 ;
+; ram[8][15]                                                      ; Merged with ram[8][10]                 ;
+; ram[8][1]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][2]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][3]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][4]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][5]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][6]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][7]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][8]                                                       ; Merged with ram[8][10]                 ;
+; ram[8][9]                                                       ; Merged with ram[8][10]                 ;
+; ram[7][11]                                                      ; Merged with ram[7][10]                 ;
+; ram[7][12]                                                      ; Merged with ram[7][10]                 ;
+; ram[7][13]                                                      ; Merged with ram[7][10]                 ;
+; ram[7][14]                                                      ; Merged with ram[7][10]                 ;
+; ram[7][15]                                                      ; Merged with ram[7][10]                 ;
+; ram[7][1]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][2]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][3]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][4]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][5]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][6]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][7]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][8]                                                       ; Merged with ram[7][10]                 ;
+; ram[7][9]                                                       ; Merged with ram[7][10]                 ;
+; ram[6][11]                                                      ; Merged with ram[6][10]                 ;
+; ram[6][12]                                                      ; Merged with ram[6][10]                 ;
+; ram[6][13]                                                      ; Merged with ram[6][10]                 ;
+; ram[6][14]                                                      ; Merged with ram[6][10]                 ;
+; ram[6][15]                                                      ; Merged with ram[6][10]                 ;
+; ram[6][1]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][2]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][3]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][4]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][5]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][6]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][7]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][8]                                                       ; Merged with ram[6][10]                 ;
+; ram[6][9]                                                       ; Merged with ram[6][10]                 ;
+; ram[5][11]                                                      ; Merged with ram[5][10]                 ;
+; ram[5][12]                                                      ; Merged with ram[5][10]                 ;
+; ram[5][13]                                                      ; Merged with ram[5][10]                 ;
+; ram[5][14]                                                      ; Merged with ram[5][10]                 ;
+; ram[5][15]                                                      ; Merged with ram[5][10]                 ;
+; ram[5][1]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][2]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][3]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][4]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][5]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][6]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][7]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][8]                                                       ; Merged with ram[5][10]                 ;
+; ram[5][9]                                                       ; Merged with ram[5][10]                 ;
+; ram[4][11]                                                      ; Merged with ram[4][10]                 ;
+; ram[4][12]                                                      ; Merged with ram[4][10]                 ;
+; ram[4][13]                                                      ; Merged with ram[4][10]                 ;
+; ram[4][14]                                                      ; Merged with ram[4][10]                 ;
+; ram[4][15]                                                      ; Merged with ram[4][10]                 ;
+; ram[4][1]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][2]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][3]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][4]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][5]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][6]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][7]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][8]                                                       ; Merged with ram[4][10]                 ;
+; ram[4][9]                                                       ; Merged with ram[4][10]                 ;
+; ram[3][11]                                                      ; Merged with ram[3][10]                 ;
+; ram[3][12]                                                      ; Merged with ram[3][10]                 ;
+; ram[3][13]                                                      ; Merged with ram[3][10]                 ;
+; ram[3][14]                                                      ; Merged with ram[3][10]                 ;
+; ram[3][15]                                                      ; Merged with ram[3][10]                 ;
+; ram[3][1]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][2]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][3]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][4]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][5]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][6]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][7]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][8]                                                       ; Merged with ram[3][10]                 ;
+; ram[3][9]                                                       ; Merged with ram[3][10]                 ;
+; ram[2][11]                                                      ; Merged with ram[2][10]                 ;
+; ram[2][12]                                                      ; Merged with ram[2][10]                 ;
+; ram[2][13]                                                      ; Merged with ram[2][10]                 ;
+; ram[2][14]                                                      ; Merged with ram[2][10]                 ;
+; ram[2][15]                                                      ; Merged with ram[2][10]                 ;
+; ram[2][1]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][2]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][3]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][4]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][5]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][6]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][7]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][8]                                                       ; Merged with ram[2][10]                 ;
+; ram[2][9]                                                       ; Merged with ram[2][10]                 ;
+; ram[1][11]                                                      ; Merged with ram[1][10]                 ;
+; ram[1][12]                                                      ; Merged with ram[1][10]                 ;
+; ram[1][13]                                                      ; Merged with ram[1][10]                 ;
+; ram[1][14]                                                      ; Merged with ram[1][10]                 ;
+; ram[1][15]                                                      ; Merged with ram[1][10]                 ;
+; ram[1][1]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][2]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][3]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][4]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][5]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][6]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][7]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][8]                                                       ; Merged with ram[1][10]                 ;
+; ram[1][9]                                                       ; Merged with ram[1][10]                 ;
+; ram[0][11]                                                      ; Merged with ram[0][10]                 ;
+; ram[0][12]                                                      ; Merged with ram[0][10]                 ;
+; ram[0][13]                                                      ; Merged with ram[0][10]                 ;
+; ram[0][14]                                                      ; Merged with ram[0][10]                 ;
+; ram[0][15]                                                      ; Merged with ram[0][10]                 ;
+; ram[0][1]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][2]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][3]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][4]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][5]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][6]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][7]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][8]                                                       ; Merged with ram[0][10]                 ;
+; ram[0][9]                                                       ; Merged with ram[0][10]                 ;
+; reg3[3]                                                         ; Merged with imm[6]                     ;
+; reg3[2]                                                         ; Merged with imm[5]                     ;
+; reg3[1]                                                         ; Merged with imm[4]                     ;
+; reg3[0]                                                         ; Merged with imm[3]                     ;
+; state[3]                                                        ; Stuck at VCC due to stuck port data_in ;
+; ram[15][10]                                                     ; Lost fanout                            ;
+; ram[14][10]                                                     ; Lost fanout                            ;
+; ram[13][10]                                                     ; Lost fanout                            ;
+; ram[12][10]                                                     ; Lost fanout                            ;
+; ram[11][10]                                                     ; Lost fanout                            ;
+; ram[10][10]                                                     ; Lost fanout                            ;
+; ram[9][10]                                                      ; Lost fanout                            ;
+; ram[8][10]                                                      ; Lost fanout                            ;
+; ram[7][10]                                                      ; Lost fanout                            ;
+; ram[6][10]                                                      ; Lost fanout                            ;
+; ram[5][10]                                                      ; Lost fanout                            ;
+; ram[4][10]                                                      ; Lost fanout                            ;
+; ram[3][10]                                                      ; Lost fanout                            ;
+; ram[2][10]                                                      ; Lost fanout                            ;
+; ram[1][10]                                                      ; Lost fanout                            ;
+; ram[0][10]                                                      ; Lost fanout                            ;
+; n2[1..7]                                                        ; Lost fanout                            ;
+; imm[1,2]                                                        ; Lost fanout                            ;
+; memory:mem|ram[0][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[1][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[2][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[3][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[4][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[5][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[6][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[7][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[8][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[9][10]                                           ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[10][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[11][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[12][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[13][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[14][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|ram[15][10]                                          ; Stuck at GND due to stuck port data_in ;
+; memory:mem|q[10]                                                ; Stuck at GND due to stuck port data_in ;
+; lcd_controller_top:controller|state~4                           ; Lost fanout                            ;
+; lcd_controller_top:controller|state~5                           ; Lost fanout                            ;
+; lcd_controller_top:controller|state~6                           ; Lost fanout                            ;
+; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~4 ; Lost fanout                            ;
+; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~5 ; Lost fanout                            ;
+; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~6 ; Lost fanout                            ;
+; Total Number of Removed Registers = 516                         ;                                        ;
++-----------------------------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                ;
++-----------------------+---------------------------+----------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------+---------------------------+----------------------------------------+
+; n2[2]                 ; Lost Fanouts              ; imm[2]                                 ;
+; n2[1]                 ; Lost Fanouts              ; imm[1]                                 ;
+; memory:mem|ram[0][10] ; Stuck at GND              ; memory:mem|q[10]                       ;
+;                       ; due to stuck port data_in ;                                        ;
++-----------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -331,12 +833,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 91    ;
+; Total registers                              ; 154   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 91    ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 36    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -346,28 +848,179 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; button_send_bef                        ; 2       ;
-; button_on_bef                          ; 4       ;
-; Total number of inverted registers = 2 ;         ;
+; start_lcd                              ; 3       ;
+; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |lcd_controller_top|lcd_init_hd44780:lcd_init|cmd_idx[1]   ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lcd_controller_top|msg_index[4]                           ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |lcd_controller_top|delay_cnt[28]                          ;
-; 9:1                ; 27 bits   ; 162 LEs       ; 54 LEs               ; 108 LEs                ; Yes        ; |lcd_controller_top|lcd_init_hd44780:lcd_init|delay_cnt[0] ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |lcd_controller_top|lcd_init_hd44780:lcd_init|delay_cnt[6] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lcd_controller_top|lcd_data                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |lcd_controller_top|lcd_init_hd44780:lcd_init|Selector0    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |lcd_controller_top|Selector1                              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |lcd_controller_top|lcd_init_hd44780:lcd_init|Selector3    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |lcd_controller_top|lcd_init_hd44780:lcd_init|Selector2    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; Yes        ; |module_mini_cpu|memory:mem|q[10]                                                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_idx[2]    ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|msg_index[1]                            ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|delay_cnt[25]                           ;
+; 9:1                ; 27 bits   ; 162 LEs       ; 54 LEs               ; 108 LEs                ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|delay_cnt[22] ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|delay_cnt[16] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_data[0]                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|Selector0                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector1     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector3     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector4     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |module_mini_cpu ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; OFF            ; 8     ; Signed Integer                                         ;
+; DECODE         ; 9     ; Signed Integer                                         ;
+; EXECUTE        ; 10    ; Signed Integer                                         ;
+; LCD_FETCH      ; 11    ; Signed Integer                                         ;
+; WAIT           ; 12    ; Signed Integer                                         ;
+; PULSE          ; 13    ; Signed Integer                                         ;
+; LOAD           ; 0     ; Signed Integer                                         ;
+; ADD            ; 1     ; Signed Integer                                         ;
+; ADDI           ; 2     ; Signed Integer                                         ;
+; SUB            ; 3     ; Signed Integer                                         ;
+; SUBI           ; 4     ; Signed Integer                                         ;
+; MUL            ; 5     ; Signed Integer                                         ;
+; CLEAR          ; 6     ; Signed Integer                                         ;
+; DISPLAY        ; 7     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ula:alu ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; OFF            ; 8     ; Signed Integer              ;
+; DECODE         ; 9     ; Signed Integer              ;
+; EXECUTE        ; 10    ; Signed Integer              ;
+; LCD_FETCH      ; 11    ; Signed Integer              ;
+; WAIT           ; 12    ; Signed Integer              ;
+; PULSE          ; 13    ; Signed Integer              ;
+; LOAD           ; 0     ; Signed Integer              ;
+; ADD            ; 1     ; Signed Integer              ;
+; ADDI           ; 2     ; Signed Integer              ;
+; SUB            ; 3     ; Signed Integer              ;
+; SUBI           ; 4     ; Signed Integer              ;
+; MUL            ; 5     ; Signed Integer              ;
+; CLEAR          ; 6     ; Signed Integer              ;
+; DISPLAY        ; 7     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory:mem ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; OFF            ; 8     ; Signed Integer                 ;
+; DECODE         ; 9     ; Signed Integer                 ;
+; EXECUTE        ; 10    ; Signed Integer                 ;
+; LCD_FETCH      ; 11    ; Signed Integer                 ;
+; WAIT           ; 12    ; Signed Integer                 ;
+; PULSE          ; 13    ; Signed Integer                 ;
+; LOAD           ; 0     ; Signed Integer                 ;
+; ADD            ; 1     ; Signed Integer                 ;
+; ADDI           ; 2     ; Signed Integer                 ;
+; SUB            ; 3     ; Signed Integer                 ;
+; SUBI           ; 4     ; Signed Integer                 ;
+; MUL            ; 5     ; Signed Integer                 ;
+; CLEAR          ; 6     ; Signed Integer                 ;
+; DISPLAY        ; 7     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ula:alu|lpm_mult:Mult0             ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 1            ; Untyped             ;
+; LPM_WIDTHB                                     ; 1            ; Untyped             ;
+; LPM_WIDTHP                                     ; 2            ; Untyped             ;
+; LPM_WIDTHR                                     ; 2            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                 ;
++---------------------------------------+------------------------+
+; Name                                  ; Value                  ;
++---------------------------------------+------------------------+
+; Number of entity instances            ; 1                      ;
+; Entity Instance                       ; ula:alu|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 1                      ;
+;     -- LPM_WIDTHB                     ; 1                      ;
+;     -- LPM_WIDTHP                     ; 2                      ;
+;     -- LPM_REPRESENTATION             ; SIGNED                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                     ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                     ;
+;     -- USE_EAB                        ; OFF                    ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
++---------------------------------------+------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller_top:controller" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; rst  ; Input ; Info     ; Stuck at VCC                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "memory:mem"        ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; data[15..1] ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula:alu"                                                                                     ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; result[15..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -375,24 +1028,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 39                          ;
-; cycloneiii_ff         ; 91                          ;
-;     CLR               ; 64                          ;
-;     CLR SLD           ; 6                           ;
-;     ENA CLR           ; 16                          ;
-;     ENA CLR SLD       ; 5                           ;
-; cycloneiii_lcell_comb ; 618                         ;
-;     arith             ; 112                         ;
-;         2 data inputs ; 112                         ;
-;     normal            ; 506                         ;
+; boundary_port         ; 32                          ;
+; cycloneiii_ff         ; 154                         ;
+;     ENA               ; 31                          ;
+;     ENA SLD           ; 5                           ;
+;     SLD               ; 22                          ;
+;     plain             ; 96                          ;
+; cycloneiii_lcell_comb ; 432                         ;
+;     arith             ; 66                          ;
+;         2 data inputs ; 66                          ;
+;     normal            ; 366                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 56                          ;
-;         3 data inputs ; 102                         ;
-;         4 data inputs ; 340                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 62                          ;
+;         4 data inputs ; 263                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 23.40                       ;
-; Average LUT depth     ; 9.53                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -411,12 +1064,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Nov 12 16:58:29 2026
+    Info: Processing started: Thu Nov 12 15:09:46 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file teste.v
-    Info (12023): Found entity 1: teste File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/teste.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file module_mini_cpu.v
     Info (12023): Found entity 1: module_mini_cpu File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
@@ -427,46 +1078,31 @@ Info (12021): Found 1 design units, including 1 entities, in source file lcd_ini
     Info (12023): Found entity 1: lcd_init_hd44780 File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller_top.v
     Info (12023): Found entity 1: lcd_controller_top File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(160): created implicit net for "to_storage" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 160
-Info (12127): Elaborating entity "lcd_controller_top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at lcd_controller_top.v(373): truncated value with size 32 to match size of target (5) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 373
-Warning (10240): Verilog HDL Always Construct warning at lcd_controller_top.v(323): inferring latch(es) for variable "sinal", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Warning (10240): Verilog HDL Always Construct warning at lcd_controller_top.v(323): inferring latch(es) for variable "count", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10264): Verilog HDL Case Statement information at lcd_controller_top.v(444): all case item expressions in this case statement are onehot File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 444
-Info (10041): Inferred latch for "count[0]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[1]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[2]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[3]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[4]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[5]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[6]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[7]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[8]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[9]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[10]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[11]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[12]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[13]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[14]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[15]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[16]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[17]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[18]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[19]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[20]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[21]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[22]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[23]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[24]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[25]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[26]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[27]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[28]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[29]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[30]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "count[31]" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (10041): Inferred latch for "sinal" at lcd_controller_top.v(323) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-Info (12128): Elaborating entity "lcd_init_hd44780" for hierarchy "lcd_init_hd44780:lcd_init" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(161): created implicit net for "to_storage" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 161
+Info (12127): Elaborating entity "module_mini_cpu" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(40): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(65): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 65
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(76): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 76
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(77): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 77
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(80): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 80
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(88): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 88
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(93): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 93
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(108): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 108
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(115): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 115
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(122): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 122
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(124): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 124
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(129): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 129
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(138): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 138
+Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(40) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
+Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 162
+Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 173
+Info (12128): Elaborating entity "lcd_controller_top" for hierarchy "lcd_controller_top:controller" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 190
+Warning (10230): Verilog HDL assignment warning at lcd_controller_top.v(375): truncated value with size 32 to match size of target (5) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 375
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller_top.v(326): inferring latch(es) for variable "sinal", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 326
+Info (10264): Verilog HDL Case Statement information at lcd_controller_top.v(446): all case item expressions in this case statement are onehot File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 446
+Info (10041): Inferred latch for "sinal" at lcd_controller_top.v(326) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 326
+Info (12128): Elaborating entity "lcd_init_hd44780" for hierarchy "lcd_controller_top:controller|lcd_init_hd44780:lcd_init" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 38
 Warning (10230): Verilog HDL assignment warning at lcd_init_hd44780.v(164): truncated value with size 32 to match size of target (3) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 164
 Warning (10030): Net "cmd_rom.data_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
 Warning (10030): Net "cmd_rom.waddr_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
@@ -475,89 +1111,43 @@ Warning (10030): Net "cmd_delay_rom.waddr_a" at lcd_init_hd44780.v(65) has no dr
 Warning (10030): Net "cmd_rom.we_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
 Warning (10030): Net "cmd_delay_rom.we_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "lcd_init_hd44780:lcd_init|cmd_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
-    Info (276004): RAM logic "lcd_init_hd44780:lcd_init|cmd_delay_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
-Warning (13012): Latch sinal$latch has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 298
-Warning (13012): Latch count[31] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[30] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[29] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[28] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[27] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[26] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[25] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[24] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[23] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[22] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[21] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[20] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[19] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[18] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[17] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[16] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[15] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[14] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[13] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[12] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[11] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[10] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[9] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[8] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[7] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[6] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[5] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[4] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[3] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[2] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[1] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Warning (13012): Latch count[0] has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 323
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_init_hd44780:lcd_init|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 55
-Info (13000): Registers with preset signals will power-up high File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 59
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
+    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_delay_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ula:alu|Mult0" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+Info (12130): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+Info (12133): Instantiated megafunction "ula:alu|lpm_mult:Mult0" with the following parameter: File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+    Info (12134): Parameter "LPM_WIDTHA" = "1"
+    Info (12134): Parameter "LPM_WIDTHB" = "1"
+    Info (12134): Parameter "LPM_WIDTHP" = "2"
+    Info (12134): Parameter "LPM_WIDTHR" = "2"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 324
+Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (13012): Latch finish_lcd has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 34
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[2] File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 60
+Warning (13012): Latch lcd_controller_top:controller|sinal has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 16
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_controller_top:controller|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 302
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 13
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (17049): 31 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 659 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 620 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Thu Nov 12 16:58:37 2026
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+Info (21057): Implemented 490 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 458 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Thu Nov 12 15:09:54 2026
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:19
 

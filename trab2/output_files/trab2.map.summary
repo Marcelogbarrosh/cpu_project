@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Nov 12 16:58:37 2026
+Analysis & Synthesis Status : Successful - Thu Nov 12 15:09:54 2026
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : trab2
-Top-level Entity Name : lcd_controller_top
+Top-level Entity Name : module_mini_cpu
 Family : Cyclone IV E
-Total logic elements : 620
-    Total combinational functions : 618
-    Dedicated logic registers : 91
-Total registers : 91
-Total pins : 39
+Total logic elements : 456
+    Total combinational functions : 432
+    Dedicated logic registers : 154
+Total registers : 154
+Total pins : 32
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

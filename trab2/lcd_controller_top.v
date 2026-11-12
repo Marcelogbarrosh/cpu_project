@@ -84,7 +84,11 @@ module lcd_controller_top (
 			case (estado_tela)
 			
 				OFF: begin
-					if(soltou_on) estado_tela <= TRACO;
+					if(soltou_on) 
+						estado_tela <= TRACO;
+					
+					else
+						estado_tela <= OFF;
 				end
 					
 				TRACO: begin
@@ -298,7 +302,6 @@ module lcd_controller_top (
     reg [2:0]  state, next_state;
     reg [31:0] delay_cnt, next_delay_cnt;
     reg [4:0]  msg_index, next_msg_index; // até 31 caracteres
-	 reg [31:0] count = 32'd0;
 
     // =======================================================================
     // 1) BLOCO SEQUENCIAL: registra estado, contador e índice da mensagem
@@ -308,7 +311,7 @@ module lcd_controller_top (
             state      <= S_WAIT_INIT;
             delay_cnt  <= 32'd0;
             msg_index  <= 5'd0;
-        end else if(count == 0)begin
+        end else begin
             state      <= next_state;
             delay_cnt  <= next_delay_cnt;
             msg_index  <= next_msg_index;
@@ -333,8 +336,7 @@ module lcd_controller_top (
                     next_state     = S_PREPARE;
                     next_msg_index = 5'd0;
 						  sinal = 0;
-						  count = 32'd0;
-                end else if(count > 0) count = count - 1;
+                end
             end
 
             // ---------------------------------------------------------------

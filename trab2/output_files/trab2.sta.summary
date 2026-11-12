@@ -2,112 +2,148 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : -8.212
-TNS   : -246.547
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -8.060
-TNS   : -544.805
+Slack : -5.099
+TNS   : -465.069
 
-Type  : Slow 1200mV 85C Model Setup 'count[0]'
-Slack : -6.898
-TNS   : -202.100
+Type  : Slow 1200mV 85C Model Setup 'lcd_controller_top:controller|sinal'
+Slack : -3.220
+TNS   : -3.220
 
-Type  : Slow 1200mV 85C Model Hold 'count[0]'
-Slack : 0.092
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'start'
+Slack : -2.338
+TNS   : -41.758
+
+Type  : Slow 1200mV 85C Model Setup 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : -1.851
+TNS   : -1.851
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.387
+Slack : 0.378
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.591
+Type  : Slow 1200mV 85C Model Hold 'start'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 1.526
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lcd_controller_top:controller|sinal'
+Slack : 2.515
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -119.935
+TNS   : -172.620
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.390
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'start'
+Slack : -1.285
+TNS   : -28.270
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 0.441
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'count[0]'
-Slack : 0.462
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lcd_controller_top:controller|sinal'
+Slack : 0.473
 TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : -7.516
-TNS   : -225.170
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -7.309
-TNS   : -491.999
+Slack : -4.566
+TNS   : -412.221
 
-Type  : Slow 1200mV 0C Model Setup 'count[0]'
-Slack : -6.272
-TNS   : -182.929
+Type  : Slow 1200mV 0C Model Setup 'lcd_controller_top:controller|sinal'
+Slack : -2.926
+TNS   : -2.926
 
-Type  : Slow 1200mV 0C Model Hold 'count[0]'
-Slack : -0.001
-TNS   : -0.001
+Type  : Slow 1200mV 0C Model Setup 'start'
+Slack : -2.045
+TNS   : -36.787
+
+Type  : Slow 1200mV 0C Model Setup 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : -1.695
+TNS   : -1.695
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.340
+Slack : 0.325
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.673
+Type  : Slow 1200mV 0C Model Hold 'start'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 1.501
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lcd_controller_top:controller|sinal'
+Slack : 2.380
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -119.935
+TNS   : -172.620
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.303
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'start'
+Slack : -1.285
+TNS   : -28.270
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lcd_controller_top:controller|sinal'
+Slack : 0.433
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'count[0]'
-Slack : 0.439
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 0.460
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.840
-TNS   : -238.411
+Slack : -1.974
+TNS   : -163.737
 
-Type  : Fast 1200mV 0C Model Setup 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : -3.684
-TNS   : -108.178
+Type  : Fast 1200mV 0C Model Setup 'lcd_controller_top:controller|sinal'
+Slack : -1.362
+TNS   : -1.362
 
-Type  : Fast 1200mV 0C Model Setup 'count[0]'
-Slack : -3.126
-TNS   : -89.634
+Type  : Fast 1200mV 0C Model Setup 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : -0.706
+TNS   : -0.706
 
-Type  : Fast 1200mV 0C Model Hold 'count[0]'
-Slack : -0.013
-TNS   : -0.013
-
-Type  : Fast 1200mV 0C Model Hold 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.149
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Setup 'start'
+Slack : -0.600
+TNS   : -9.326
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.175
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'start'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 1.028
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lcd_controller_top:controller|sinal'
+Slack : 1.511
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -99.589
+TNS   : -142.867
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lcd_init_hd44780:lcd_init|state.S_DONE'
-Slack : 0.250
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'start'
+Slack : -1.000
+TNS   : -22.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state.S_DONE'
+Slack : 0.363
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'count[0]'
-Slack : 0.420
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lcd_controller_top:controller|sinal'
+Slack : 0.371
 TNS   : 0.000
 
 ------------------------------------------------------------
