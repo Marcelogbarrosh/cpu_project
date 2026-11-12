@@ -86,6 +86,9 @@ module lcd_controller_top (
 				OFF: begin
 					if(soltou_on) 
 						estado_tela <= TRACO;
+					
+					else
+						estado_tela <= OFF;
 				end
 					
 				TRACO: begin
@@ -292,7 +295,9 @@ module lcd_controller_top (
         S_PULSE_E    = 3'd2,
         S_WAIT       = 3'd3,
         S_DONE       = 3'd4,
-		  S_LINHA2     = 3'd5;
+		  S_LINHA2     = 3'd5,
+		  S_CMD_PULSE  = 3'd6,
+		  S_CMD_WAIT   = 3'd7;
 
     reg [2:0]  state, next_state;
     reg [31:0] delay_cnt, next_delay_cnt;
@@ -372,11 +377,26 @@ module lcd_controller_top (
                     end 
 					 end
             end
-				S_LINHA2: begin
-					next_state = S_PULSE_E;
+				S_LINHA2: begin //sinal pra jogar um puslo de enable com comando, ja vai direto pro pulso 0 -> 1
+					next_state = S_CMD_PULSE;
 					next_delay_cnt = DELAY_PULSE;
 					next_msg_index = 5'd16;
             end
+				S_CMD_PULSE : begin		//pulso =1, espera pro clk pegar, joga pro cmd wait que inverte o sinal pra 0, assim a lcd vai pegar o cmd (negedge)
+					if (delay_cnt > 0)
+						next_delay_cnt = delay_cnt - 1;
+					else begin
+						next_state = S_CMD_WAIT;
+						next_delay_cnt = DELAY_WRITE;					
+					end
+				end
+				S_CMD_WAIT : begin
+					if (delay_cnt > 0)
+						next_delay_cnt = delay_cnt - 1;
+					else begin
+						next_state = S_PREPARE;
+					end
+				end
 
             // ---------------------------------------------------------------
             // Mensagem completa
@@ -457,7 +477,19 @@ module lcd_controller_top (
 					wr_data = 8'hC0;
 					wr_rs = 1'b0;
 					wr_rw = 1'b0;
+					wr_e = 1'b0;
+				end
+				S_CMD_PULSE: begin
+					wr_data = 8'hC0; 
+					wr_rs = 1'b0; 
+					wr_rw = 1'b0; 
 					wr_e = 1'b1;
+				end
+				S_CMD_WAIT: begin
+					wr_data = 8'hC0; //comando pra jogar pra segunda linha
+					wr_rs = 1'b0; 
+					wr_rw = 1'b0; 
+					wr_e = 1'b0;
 				end
 
             default: begin

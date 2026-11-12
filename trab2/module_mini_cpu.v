@@ -175,7 +175,7 @@ module module_mini_cpu (
 	
 	lcd_controller_top controller (
 		.clk						(clk),
-		.rst						(start_lcd),
+		.rst						(1'b1),
 		.opcode					(opcode),
 		.destino					(reg1),
 		.valor_destino			(ram_reg),

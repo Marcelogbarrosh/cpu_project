@@ -44,7 +44,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "button_send",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -52,7 +52,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "button_send",
 					"strict" : false
 				},
 				{

@@ -1,12 +1,14 @@
 
 State Machine - |module_mini_cpu|lcd_controller_top:controller|state
-Name state.S_LINHA2 state.S_DONE state.S_WAIT state.S_PULSE_E state.S_PREPARE state.S_WAIT_INIT 
-state.S_WAIT_INIT 0 0 0 0 0 0 
-state.S_PREPARE 0 0 0 0 1 1 
-state.S_PULSE_E 0 0 0 1 0 1 
-state.S_WAIT 0 0 1 0 0 1 
-state.S_DONE 0 1 0 0 0 1 
-state.S_LINHA2 1 0 0 0 0 1 
+Name state.S_CMD_WAIT state.S_CMD_PULSE state.S_LINHA2 state.S_DONE state.S_WAIT state.S_PULSE_E state.S_PREPARE state.S_WAIT_INIT 
+state.S_WAIT_INIT 0 0 0 0 0 0 0 0 
+state.S_PREPARE 0 0 0 0 0 0 1 1 
+state.S_PULSE_E 0 0 0 0 0 1 0 1 
+state.S_WAIT 0 0 0 0 1 0 0 1 
+state.S_DONE 0 0 0 1 0 0 0 1 
+state.S_LINHA2 0 0 1 0 0 0 0 1 
+state.S_CMD_PULSE 0 1 0 0 0 0 0 1 
+state.S_CMD_WAIT 1 0 0 0 0 0 0 1 
 
 State Machine - |module_mini_cpu|lcd_controller_top:controller|estado_tela
 Name estado_tela.TRACO estado_tela.OFF estado_tela.ON 
