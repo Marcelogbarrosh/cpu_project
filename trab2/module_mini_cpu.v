@@ -26,7 +26,7 @@ module module_mini_cpu (
 	reg		 	on = 0;	//indica se deve desligar/ligar
 	reg		 	send = 0;	//indica se há alguma entrada enviada até o momento
 	reg		 	we = 0;
-	reg [15:0]	to_storage1;	//registrador auxiliar
+	reg [15:0]	to_storage1;	//registradores auxiliares
 	reg [15:0] 	to_storage2; 
 	wire			finish;	//indica se a operação e o armazenamento foi realizado para atualizar o LCD
 	reg			start = 0;	//indica se o armazemento de informação deve começar
@@ -39,13 +39,13 @@ module module_mini_cpu (
 	always@ (*) begin
 		case(state)
 			LCD_FETCH: begin
-				if(start_lcd && done) begin
+				if(!start_lcd && done) begin
 					finish_lcd <= 1;
 				end
 			end
 			
 			OFF: begin
-				if(start_lcd && done) begin
+				if(!start_lcd && done) begin
 					finish_lcd <= 1;
 				end
 			end
@@ -61,13 +61,13 @@ module module_mini_cpu (
 		case(state)
 			OFF: begin		//estado desligado
 				if(!button_on == 1 && finish_lcd) begin
-					state <= PULSE;	//entra no estado de transição quando o botão for pressionado
 					on <= 1;	//<- deve ligar
+					state <= PULSE;	//entra no estado de transição quando o botão for pressionado
 				end else if(!finish_lcd) begin	//enquanto o lcd nao atualizar, o estado permanecerá em desligado
-					start_lcd <= 1;	
+					start_lcd <= 0;	
 					state <= state;
 				end else if(finish_lcd) begin		//uma vez que o lcd atualiza, ele para
-					start_lcd <= 0;
+					start_lcd <= 1;
 					state <= state;
 				end
 			end
@@ -76,21 +76,21 @@ module module_mini_cpu (
 				if(on == 1 && !button_on == 0) state <= WAIT;
 				else if(on == 0 && !button_on == 0) state <= OFF;
 				else if(send == 1 && !button_send == 0) begin
-					state <= DECODE;
 					send <= 0;
+					state <= DECODE;
 				end
 				else state <= state;
 			end
 			
 			WAIT: begin		//estado de espera da entrada
 				if(!button_send == 1) begin
-					state <= PULSE;
 					send <= 1; //<- está enviando uma entrada
+					state <= PULSE;
 				end
 				
 				else if(!button_on == 1) begin
-					state <= PULSE;
 					on <= 0; //<- deve desligar
+					state <= PULSE;
 				end
 				
 				else begin
@@ -111,8 +111,8 @@ module module_mini_cpu (
 			EXECUTE: begin		//executa a devida operação com os dados fornecidos
 				//troca de estado
 				if(finish) begin
-					state <= LCD_FETCH;
 					start <= 0;
+					state <= LCD_FETCH;
 				end
 					
 				else begin
@@ -134,17 +134,18 @@ module module_mini_cpu (
 			
 			LCD_FETCH:
 				if(finish_lcd) begin
+					start_lcd <= 1;
 					state <= WAIT;
 				end
 				
 				else if(!start)begin
-					state <= state;
 					start <= 1;
+					state <= state;
 				end
 				
 				else if(start) begin
 					ram[reg1] <= ram_reg;
-					start_lcd <= 1;
+					start_lcd <= 0;
 					state <= state;
 				end
 			

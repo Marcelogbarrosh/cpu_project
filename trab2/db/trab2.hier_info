@@ -30,11 +30,10 @@ button_on => state.DATAA
 button_on => always1.IN1
 button_send => always1.IN1
 button_send => lcd_controller_top:controller.button_send
-button_send => state.OUTPUTSELECT
 button_send => send.OUTPUTSELECT
+button_send => state.OUTPUTSELECT
 button_send => on.OUTPUTSELECT
 button_send => start.OUTPUTSELECT
-rst => ~NO_FANOUT~
 clk => lcd_controller_top:controller.clk
 clk => imm[0].CLK
 clk => imm[1].CLK
@@ -68,7 +67,6 @@ clk => n2[5].CLK
 clk => n2[6].CLK
 clk => n2[7].CLK
 clk => we.CLK
-clk => start_lcd.CLK
 clk => ram[0][0].CLK
 clk => ram[0][1].CLK
 clk => ram[0][2].CLK
@@ -325,6 +323,7 @@ clk => ram[15][12].CLK
 clk => ram[15][13].CLK
 clk => ram[15][14].CLK
 clk => ram[15][15].CLK
+clk => start_lcd.CLK
 clk => start.CLK
 clk => on.CLK
 clk => send.CLK
@@ -332,17 +331,17 @@ clk => state[0].CLK
 clk => state[1].CLK
 clk => state[2].CLK
 clk => state[3].CLK
-lcd_data[0] <= lcd_controller_top:controller.lcd_data[0]
-lcd_data[1] <= lcd_controller_top:controller.lcd_data[1]
-lcd_data[2] <= lcd_controller_top:controller.lcd_data[2]
-lcd_data[3] <= lcd_controller_top:controller.lcd_data[3]
-lcd_data[4] <= lcd_controller_top:controller.lcd_data[4]
-lcd_data[5] <= lcd_controller_top:controller.lcd_data[5]
-lcd_data[6] <= lcd_controller_top:controller.lcd_data[6]
-lcd_data[7] <= lcd_controller_top:controller.lcd_data[7]
-lcd_rs <= lcd_controller_top:controller.lcd_rs
-lcd_rw <= lcd_controller_top:controller.lcd_rw
-lcd_e <= lcd_controller_top:controller.lcd_e
+lcd_data[0] << lcd_controller_top:controller.lcd_data[0]
+lcd_data[1] << lcd_controller_top:controller.lcd_data[1]
+lcd_data[2] << lcd_controller_top:controller.lcd_data[2]
+lcd_data[3] << lcd_controller_top:controller.lcd_data[3]
+lcd_data[4] << lcd_controller_top:controller.lcd_data[4]
+lcd_data[5] << lcd_controller_top:controller.lcd_data[5]
+lcd_data[6] << lcd_controller_top:controller.lcd_data[6]
+lcd_data[7] << lcd_controller_top:controller.lcd_data[7]
+lcd_rs << lcd_controller_top:controller.lcd_rs
+lcd_rw << lcd_controller_top:controller.lcd_rw
+lcd_e << lcd_controller_top:controller.lcd_e
 
 
 |module_mini_cpu|ula:alu

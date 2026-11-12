@@ -1,5 +1,5 @@
 Analysis & Synthesis report for trab2
-Wed Nov 11 16:34:13 2026
+Thu Nov 12 13:50:53 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -58,16 +58,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 11 16:34:13 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 12 13:50:53 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
 ; Top-level Entity Name              ; module_mini_cpu                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 454                                         ;
-;     Total combinational functions  ; 434                                         ;
+; Total logic elements               ; 458                                         ;
+;     Total combinational functions  ; 438                                         ;
 ;     Dedicated logic registers      ; 152                                         ;
 ; Total registers                    ; 152                                         ;
-; Total pins                         ; 33                                          ;
+; Total pins                         ; 32                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -213,29 +213,29 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 454       ;
+; Estimated Total logic elements              ; 458       ;
 ;                                             ;           ;
-; Total combinational functions               ; 434       ;
+; Total combinational functions               ; 438       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 263       ;
-;     -- 3 input functions                    ; 64        ;
-;     -- <=2 input functions                  ; 107       ;
+;     -- 4 input functions                    ; 264       ;
+;     -- 3 input functions                    ; 66        ;
+;     -- <=2 input functions                  ; 108       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 368       ;
+;     -- normal mode                          ; 372       ;
 ;     -- arithmetic mode                      ; 66        ;
 ;                                             ;           ;
 ; Total registers                             ; 152       ;
 ;     -- Dedicated logic registers            ; 152       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 33        ;
+; I/O pins                                    ; 32        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 130       ;
-; Total fan-out                               ; 1979      ;
+; Total fan-out                               ; 1990      ;
 ; Average fan-out                             ; 3.04      ;
 +---------------------------------------------+-----------+
 
@@ -245,7 +245,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name        ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
-; |module_mini_cpu                   ; 434 (68)            ; 152 (41)                  ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |module_mini_cpu                                                         ; module_mini_cpu    ; work         ;
+; |module_mini_cpu                   ; 438 (72)            ; 152 (41)                  ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |module_mini_cpu                                                         ; module_mini_cpu    ; work         ;
 ;    |lcd_controller_top:controller| ; 286 (186)           ; 89 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller                           ; lcd_controller_top ; work         ;
 ;       |lcd_init_hd44780:lcd_init|  ; 100 (100)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init ; lcd_init_hd44780   ; work         ;
 ;    |memory:mem|                    ; 79 (79)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|memory:mem                                              ; memory             ; work         ;
@@ -1018,7 +1018,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 33                          ;
+; boundary_port         ; 32                          ;
 ; cycloneiii_ff         ; 152                         ;
 ;     CLR               ; 67                          ;
 ;     CLR SLD           ; 8                           ;
@@ -1027,15 +1027,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SLD       ; 5                           ;
 ;     SLD               ; 16                          ;
 ;     plain             ; 27                          ;
-; cycloneiii_lcell_comb ; 434                         ;
+; cycloneiii_lcell_comb ; 438                         ;
 ;     arith             ; 66                          ;
 ;         2 data inputs ; 66                          ;
-;     normal            ; 368                         ;
+;     normal            ; 372                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 35                          ;
-;         3 data inputs ; 64                          ;
-;         4 data inputs ; 263                         ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 66                          ;
+;         4 data inputs ; 264                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
 ; Average LUT depth     ; 4.22                        ;
@@ -1057,7 +1057,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Nov 11 16:34:05 2026
+    Info: Processing started: Thu Nov 12 13:50:45 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1073,21 +1073,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file lcd_con
     Info (12023): Found entity 1: lcd_controller_top File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 2
 Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(161): created implicit net for "to_storage" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 161
 Info (12127): Elaborating entity "module_mini_cpu" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(20): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 20
-Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(41): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 41
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(40): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(65): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 65
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(76): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 76
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(77): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 77
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(78): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 78
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(80): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 80
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(88): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 88
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(93): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 93
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(109): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 109
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(108): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 108
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(115): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 115
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(123): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 123
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(125): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 125
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(130): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 130
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(122): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 122
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(124): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 124
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(129): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 129
 Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(138): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 138
-Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(41) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 41
+Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(40) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
 Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 162
 Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 173
 Info (12128): Elaborating entity "lcd_controller_top" for hierarchy "lcd_controller_top:controller" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 190
@@ -1121,29 +1121,28 @@ Info (12133): Instantiated megafunction "ula:alu|lpm_mult:Mult0" with the follow
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 324
 Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Warning (13012): Latch finish_lcd has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 35
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[2] File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 61
+Warning (13012): Latch finish_lcd has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 34
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[2] File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 60
 Warning (13012): Latch lcd_controller_top:controller|sinal has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 16
     Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_controller_top:controller|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 297
 Info (13000): Registers with preset signals will power-up high File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 59
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 11
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 31 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 5
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
     Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-Info (21057): Implemented 490 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
+Info (21057): Implemented 493 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 457 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info (21061): Implemented 461 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
     Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Wed Nov 11 16:34:13 2026
+    Info: Processing ended: Thu Nov 12 13:50:53 2026
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:19
 

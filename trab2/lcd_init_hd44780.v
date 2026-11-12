@@ -153,7 +153,8 @@ module lcd_init_hd44780 (
             end
 
             // ---------------------------------------------------------------
-            // WAIT: espera o comando terminar internamente no LCD
+            // WAIT: espera o comando terminar internamente no 
+
             // ---------------------------------------------------------------
             S_WAIT: begin
                 if (delay_cnt > 0) begin
