@@ -1,5 +1,5 @@
 Analysis & Synthesis report for trab2
-Thu Nov 12 15:09:54 2026
+Thu Nov 12 17:38:15 2026
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -16,23 +16,21 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   8. State Machine - |module_mini_cpu|lcd_controller_top:controller|state
   9. State Machine - |module_mini_cpu|lcd_controller_top:controller|estado_tela
  10. State Machine - |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |module_mini_cpu
- 18. Parameter Settings for User Entity Instance: ula:alu
- 19. Parameter Settings for User Entity Instance: memory:mem
- 20. Parameter Settings for Inferred Entity Instance: ula:alu|lpm_mult:Mult0
- 21. lpm_mult Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "lcd_controller_top:controller"
- 23. Port Connectivity Checks: "memory:mem"
- 24. Port Connectivity Checks: "ula:alu"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |module_mini_cpu
+ 16. Parameter Settings for User Entity Instance: ula:alu
+ 17. Parameter Settings for User Entity Instance: memory:mem
+ 18. Parameter Settings for Inferred Entity Instance: ula:alu|lpm_mult:Mult0
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "lcd_controller_top:controller"
+ 21. Port Connectivity Checks: "memory:mem"
+ 22. Port Connectivity Checks: "ula:alu"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +57,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 12 15:09:54 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 12 17:38:15 2026       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; trab2                                       ;
 ; Top-level Entity Name              ; module_mini_cpu                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 456                                         ;
-;     Total combinational functions  ; 432                                         ;
-;     Dedicated logic registers      ; 154                                         ;
-; Total registers                    ; 154                                         ;
+; Total logic elements               ; 454                                         ;
+;     Total combinational functions  ; 428                                         ;
+;     Dedicated logic registers      ; 156                                         ;
+; Total registers                    ; 156                                         ;
 ; Total pins                         ; 32                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -185,11 +183,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
-; module_mini_cpu.v                ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v    ;         ;
-; ula.v                            ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v                ;         ;
-; memory.v                         ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v             ;         ;
-; lcd_init_hd44780.v               ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v   ;         ;
-; lcd_controller_top.v             ; yes             ; User Verilog HDL File  ; D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v ;         ;
+; module_mini_cpu.v                ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v    ;         ;
+; ula.v                            ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v                ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v             ;         ;
+; lcd_init_hd44780.v               ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v   ;         ;
+; lcd_controller_top.v             ; yes             ; User Verilog HDL File  ; D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf           ;         ;
 ; aglobal211.inc                   ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/aglobal211.inc         ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction           ; c:/altera/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc        ;         ;
@@ -214,20 +212,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 456       ;
+; Estimated Total logic elements              ; 454       ;
 ;                                             ;           ;
-; Total combinational functions               ; 432       ;
+; Total combinational functions               ; 428       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 263       ;
-;     -- 3 input functions                    ; 62        ;
-;     -- <=2 input functions                  ; 107       ;
+;     -- 4 input functions                    ; 254       ;
+;     -- 3 input functions                    ; 69        ;
+;     -- <=2 input functions                  ; 105       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 366       ;
+;     -- normal mode                          ; 362       ;
 ;     -- arithmetic mode                      ; 66        ;
 ;                                             ;           ;
-; Total registers                             ; 154       ;
-;     -- Dedicated logic registers            ; 154       ;
+; Total registers                             ; 156       ;
+;     -- Dedicated logic registers            ; 156       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 32        ;
@@ -235,9 +233,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 132       ;
-; Total fan-out                               ; 1887      ;
-; Average fan-out                             ; 2.90      ;
+; Maximum fan-out                             ; 134       ;
+; Total fan-out                               ; 1875      ;
+; Average fan-out                             ; 2.89      ;
 +---------------------------------------------+-----------+
 
 
@@ -246,30 +244,33 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name        ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
-; |module_mini_cpu                   ; 432 (68)            ; 154 (41)                  ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |module_mini_cpu                                                         ; module_mini_cpu    ; work         ;
-;    |lcd_controller_top:controller| ; 284 (184)           ; 91 (50)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller                           ; lcd_controller_top ; work         ;
+; |module_mini_cpu                   ; 428 (61)            ; 156 (40)                  ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |module_mini_cpu                                                         ; module_mini_cpu    ; work         ;
+;    |lcd_controller_top:controller| ; 286 (186)           ; 94 (53)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller                           ; lcd_controller_top ; work         ;
 ;       |lcd_init_hd44780:lcd_init|  ; 100 (100)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init ; lcd_init_hd44780   ; work         ;
-;    |memory:mem|                    ; 79 (79)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|memory:mem                                              ; memory             ; work         ;
+;    |memory:mem|                    ; 80 (80)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|memory:mem                                              ; memory             ; work         ;
 ;    |ula:alu|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |module_mini_cpu|ula:alu                                                 ; ula                ; work         ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |module_mini_cpu|lcd_controller_top:controller|state                                                                                            ;
-+-------------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
-; Name              ; state.S_CMD_WAIT ; state.S_CMD_PULSE ; state.S_LINHA2 ; state.S_DONE ; state.S_WAIT ; state.S_PULSE_E ; state.S_PREPARE ; state.S_WAIT_INIT ;
-+-------------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
-; state.S_WAIT_INIT ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 0                 ;
-; state.S_PREPARE   ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 1               ; 1                 ;
-; state.S_PULSE_E   ; 0                ; 0                 ; 0              ; 0            ; 0            ; 1               ; 0               ; 1                 ;
-; state.S_WAIT      ; 0                ; 0                 ; 0              ; 0            ; 1            ; 0               ; 0               ; 1                 ;
-; state.S_DONE      ; 0                ; 0                 ; 0              ; 1            ; 0            ; 0               ; 0               ; 1                 ;
-; state.S_LINHA2    ; 0                ; 0                 ; 1              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
-; state.S_CMD_PULSE ; 0                ; 1                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
-; state.S_CMD_WAIT  ; 1                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
-+-------------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |module_mini_cpu|lcd_controller_top:controller|state                                                                                                                                                     ;
++--------------------+-------------------+--------------------+--------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
+; Name               ; state.S_HOME_WAIT ; state.S_HOME_PULSE ; state.S_HOME ; state.S_CMD_WAIT ; state.S_CMD_PULSE ; state.S_LINHA2 ; state.S_DONE ; state.S_WAIT ; state.S_PULSE_E ; state.S_PREPARE ; state.S_WAIT_INIT ;
++--------------------+-------------------+--------------------+--------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
+; state.S_WAIT_INIT  ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 0                 ;
+; state.S_PREPARE    ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 1               ; 1                 ;
+; state.S_PULSE_E    ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 1               ; 0               ; 1                 ;
+; state.S_WAIT       ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 1            ; 0               ; 0               ; 1                 ;
+; state.S_DONE       ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 1            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_LINHA2     ; 0                 ; 0                  ; 0            ; 0                ; 0                 ; 1              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_CMD_PULSE  ; 0                 ; 0                  ; 0            ; 0                ; 1                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_CMD_WAIT   ; 0                 ; 0                  ; 0            ; 1                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_HOME       ; 0                 ; 0                  ; 1            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_HOME_PULSE ; 0                 ; 1                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
+; state.S_HOME_WAIT  ; 1                 ; 0                  ; 0            ; 0                ; 0                 ; 0              ; 0            ; 0            ; 0               ; 0               ; 1                 ;
++--------------------+-------------------+--------------------+--------------+------------------+-------------------+----------------+--------------+--------------+-----------------+-----------------+-------------------+
 
 
 Encoding Type:  One-Hot
@@ -299,24 +300,13 @@ Encoding Type:  One-Hot
 +--------------------+--------------+--------------+---------------+---------------+--------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                    ;
-+----------------------------------------------------+------------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                      ; Free of Timing Hazards ;
-+----------------------------------------------------+------------------------------------------+------------------------+
-; finish_lcd                                         ; Selector4                                ; yes                    ;
-; lcd_controller_top:controller|sinal                ; lcd_controller_top:controller|Selector39 ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                                          ;                        ;
-+----------------------------------------------------+------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +----------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                       ;
 +-----------------------------------------------------------------+----------------------------------------+
 ; Register name                                                   ; Reason for Removal                     ;
 +-----------------------------------------------------------------+----------------------------------------+
 ; imm[7]                                                          ; Stuck at GND due to stuck port data_in ;
+; state[3]                                                        ; Stuck at VCC due to stuck port data_in ;
 ; memory:mem|q[1..9,11..15]                                       ; Merged with memory:mem|q[10]           ;
 ; memory:mem|ram[15][11]                                          ; Merged with memory:mem|ram[15][10]     ;
 ; memory:mem|ram[15][12]                                          ; Merged with memory:mem|ram[15][10]     ;
@@ -770,7 +760,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; reg3[2]                                                         ; Merged with imm[5]                     ;
 ; reg3[1]                                                         ; Merged with imm[4]                     ;
 ; reg3[0]                                                         ; Merged with imm[3]                     ;
-; state[3]                                                        ; Stuck at VCC due to stuck port data_in ;
 ; ram[15][10]                                                     ; Lost fanout                            ;
 ; ram[14][10]                                                     ; Lost fanout                            ;
 ; ram[13][10]                                                     ; Lost fanout                            ;
@@ -809,10 +798,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; lcd_controller_top:controller|state~4                           ; Lost fanout                            ;
 ; lcd_controller_top:controller|state~5                           ; Lost fanout                            ;
 ; lcd_controller_top:controller|state~6                           ; Lost fanout                            ;
+; lcd_controller_top:controller|state~7                           ; Lost fanout                            ;
 ; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~4 ; Lost fanout                            ;
 ; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~5 ; Lost fanout                            ;
 ; lcd_controller_top:controller|lcd_init_hd44780:lcd_init|state~6 ; Lost fanout                            ;
-; Total Number of Removed Registers = 516                         ;                                        ;
+; Total Number of Removed Registers = 517                         ;                                        ;
 +-----------------------------------------------------------------+----------------------------------------+
 
 
@@ -833,24 +823,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 154   ;
+; Total registers                              ; 156   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 27    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Clock Enable       ; 37    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; start_lcd                              ; 3       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -858,17 +838,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; Yes        ; |module_mini_cpu|memory:mem|q[10]                                                      ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; Yes        ; |module_mini_cpu|memory:mem|q[0]                                                       ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_idx[2]    ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|msg_index[1]                            ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|delay_cnt[25]                           ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|msg_index[4]                            ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|delay_cnt[0]                            ;
 ; 9:1                ; 27 bits   ; 162 LEs       ; 54 LEs               ; 108 LEs                ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|delay_cnt[22] ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|delay_cnt[16] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_data[0]                             ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|delay_cnt[14] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_data[1]                             ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|Selector0                               ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector1     ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector3     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector4     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector5     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |module_mini_cpu|lcd_controller_top:controller|lcd_init_hd44780:lcd_init|Selector2     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
@@ -996,13 +976,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "lcd_controller_top:controller" ;
-+------+-------+----------+---------------------------------+
-; Port ; Type  ; Severity ; Details                         ;
-+------+-------+----------+---------------------------------+
-; rst  ; Input ; Info     ; Stuck at VCC                    ;
-+------+-------+----------+---------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller_top:controller"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; rst   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sinal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------+
@@ -1029,23 +1010,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 32                          ;
-; cycloneiii_ff         ; 154                         ;
-;     ENA               ; 31                          ;
-;     ENA SLD           ; 5                           ;
-;     SLD               ; 22                          ;
-;     plain             ; 96                          ;
-; cycloneiii_lcell_comb ; 432                         ;
+; cycloneiii_ff         ; 156                         ;
+;     ENA               ; 37                          ;
+;     SLD               ; 27                          ;
+;     plain             ; 92                          ;
+; cycloneiii_lcell_comb ; 429                         ;
 ;     arith             ; 66                          ;
 ;         2 data inputs ; 66                          ;
-;     normal            ; 366                         ;
+;     normal            ; 363                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 37                          ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 263                         ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 69                          ;
+;         4 data inputs ; 254                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 4.24                        ;
+; Average LUT depth     ; 4.17                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1064,59 +1044,58 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Nov 12 15:09:46 2026
+    Info: Processing started: Thu Nov 12 17:38:07 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab2 -c trab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file module_mini_cpu.v
-    Info (12023): Found entity 1: module_mini_cpu File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
+    Info (12023): Found entity 1: module_mini_cpu File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
-    Info (12023): Found entity 1: ula File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 1
+    Info (12023): Found entity 1: ula File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
-    Info (12023): Found entity 1: memory File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
+    Info (12023): Found entity 1: memory File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/memory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lcd_init_hd44780.v
-    Info (12023): Found entity 1: lcd_init_hd44780 File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 12
+    Info (12023): Found entity 1: lcd_init_hd44780 File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller_top.v
-    Info (12023): Found entity 1: lcd_controller_top File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(161): created implicit net for "to_storage" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 161
+    Info (12023): Found entity 1: lcd_controller_top File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(126): created implicit net for "to_storage" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 126
+Warning (10236): Verilog HDL Implicit Net warning at module_mini_cpu.v(154): created implicit net for "done" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 154
 Info (12127): Elaborating entity "module_mini_cpu" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at module_mini_cpu.v(40): inferring latch(es) for variable "finish_lcd", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(65): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 65
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(76): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 76
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(77): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 77
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(80): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 80
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(88): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 88
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(93): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 93
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(108): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 108
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(115): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 115
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(122): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 122
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(124): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 124
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(129): truncated value with size 16 to match size of target (8) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 129
-Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(138): truncated value with size 32 to match size of target (4) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 138
-Info (10041): Inferred latch for "finish_lcd" at module_mini_cpu.v(40) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
-Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 162
-Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 173
-Info (12128): Elaborating entity "lcd_controller_top" for hierarchy "lcd_controller_top:controller" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 190
-Warning (10230): Verilog HDL assignment warning at lcd_controller_top.v(375): truncated value with size 32 to match size of target (5) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 375
-Warning (10240): Verilog HDL Always Construct warning at lcd_controller_top.v(326): inferring latch(es) for variable "sinal", which holds its previous value in one or more paths through the always construct File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 326
-Info (10264): Verilog HDL Case Statement information at lcd_controller_top.v(446): all case item expressions in this case statement are onehot File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 446
-Info (10041): Inferred latch for "sinal" at lcd_controller_top.v(326) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 326
-Info (12128): Elaborating entity "lcd_init_hd44780" for hierarchy "lcd_controller_top:controller|lcd_init_hd44780:lcd_init" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 38
-Warning (10230): Verilog HDL assignment warning at lcd_init_hd44780.v(164): truncated value with size 32 to match size of target (3) File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 164
-Warning (10030): Net "cmd_rom.data_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
-Warning (10030): Net "cmd_rom.waddr_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
-Warning (10030): Net "cmd_delay_rom.data_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
-Warning (10030): Net "cmd_delay_rom.waddr_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
-Warning (10030): Net "cmd_rom.we_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
-Warning (10030): Net "cmd_delay_rom.we_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(19): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 19
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(40): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 40
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(47): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 47
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(48): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 48
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(51): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 51
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(59): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 59
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(64): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 64
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(79): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 79
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(86): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 86
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(93): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 93
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(95): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 95
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(100): truncated value with size 16 to match size of target (8) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 100
+Warning (10230): Verilog HDL assignment warning at module_mini_cpu.v(113): truncated value with size 32 to match size of target (4) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 113
+Info (12128): Elaborating entity "ula" for hierarchy "ula:alu" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 127
+Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 138
+Info (12128): Elaborating entity "lcd_controller_top" for hierarchy "lcd_controller_top:controller" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 155
+Warning (10230): Verilog HDL assignment warning at lcd_controller_top.v(378): truncated value with size 32 to match size of target (5) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 378
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller_top.v(329): inferring latch(es) for variable "sinal", which holds its previous value in one or more paths through the always construct File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 329
+Info (10264): Verilog HDL Case Statement information at lcd_controller_top.v(469): all case item expressions in this case statement are onehot File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 469
+Info (10041): Inferred latch for "sinal" at lcd_controller_top.v(329) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 329
+Info (12128): Elaborating entity "lcd_init_hd44780" for hierarchy "lcd_controller_top:controller|lcd_init_hd44780:lcd_init" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 38
+Warning (10230): Verilog HDL assignment warning at lcd_init_hd44780.v(164): truncated value with size 32 to match size of target (3) File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 164
+Warning (10030): Net "cmd_rom.data_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
+Warning (10030): Net "cmd_rom.waddr_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
+Warning (10030): Net "cmd_delay_rom.data_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
+Warning (10030): Net "cmd_delay_rom.waddr_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
+Warning (10030): Net "cmd_rom.we_a" at lcd_init_hd44780.v(64) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
+Warning (10030): Net "cmd_delay_rom.we_a" at lcd_init_hd44780.v(65) has no driver or initial value, using a default initial value '0' File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
-    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_delay_rom" is uninferred due to inappropriate RAM size File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
+    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_rom" is uninferred due to inappropriate RAM size File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 64
+    Info (276004): RAM logic "lcd_controller_top:controller|lcd_init_hd44780:lcd_init|cmd_delay_rom" is uninferred due to inappropriate RAM size File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/lcd_init_hd44780.v Line: 65
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ula:alu|Mult0" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
-Info (12130): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
-Info (12133): Instantiated megafunction "ula:alu|lpm_mult:Mult0" with the following parameter: File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ula:alu|Mult0" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+Info (12130): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
+Info (12133): Instantiated megafunction "ula:alu|lpm_mult:Mult0" with the following parameter: File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/ula.v Line: 19
     Info (12134): Parameter "LPM_WIDTHA" = "1"
     Info (12134): Parameter "LPM_WIDTHB" = "1"
     Info (12134): Parameter "LPM_WIDTHP" = "2"
@@ -1128,26 +1107,22 @@ Info (12133): Instantiated megafunction "ula:alu|lpm_mult:Mult0" with the follow
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 324
 Info (12131): Elaborated megafunction instantiation "ula:alu|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ula:alu|lpm_mult:Mult0" File: c:/altera/21.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Warning (13012): Latch finish_lcd has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 34
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[2] File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 60
-Warning (13012): Latch lcd_controller_top:controller|sinal has unsafe behavior File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 16
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal lcd_controller_top:controller|state.S_DONE File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/lcd_controller_top.v Line: 302
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 31 registers lost all their fanouts during netlist optimizations.
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-    Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
-Info (21057): Implemented 490 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "data[2]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+    Warning (15610): No output dependent on input pin "data[1]" File: D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/module_mini_cpu.v Line: 2
+Info (21057): Implemented 488 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 458 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info (21061): Implemented 456 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
     Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Thu Nov 12 15:09:54 2026
+    Info: Processing ended: Thu Nov 12 17:38:15 2026
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:19
 

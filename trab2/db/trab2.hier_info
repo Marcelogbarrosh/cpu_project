@@ -24,17 +24,17 @@ data[17] => opcode.DATAB
 button_on => button_on.IN1
 button_send => button_send.IN1
 clk => clk.IN1
-lcd_data[0] << lcd_controller_top:controller.lcd_data
-lcd_data[1] << lcd_controller_top:controller.lcd_data
-lcd_data[2] << lcd_controller_top:controller.lcd_data
-lcd_data[3] << lcd_controller_top:controller.lcd_data
-lcd_data[4] << lcd_controller_top:controller.lcd_data
-lcd_data[5] << lcd_controller_top:controller.lcd_data
-lcd_data[6] << lcd_controller_top:controller.lcd_data
-lcd_data[7] << lcd_controller_top:controller.lcd_data
-lcd_rs << lcd_controller_top:controller.lcd_rs
-lcd_rw << lcd_controller_top:controller.lcd_rw
-lcd_e << lcd_controller_top:controller.lcd_e
+lcd_data[0] <= lcd_controller_top:controller.lcd_data
+lcd_data[1] <= lcd_controller_top:controller.lcd_data
+lcd_data[2] <= lcd_controller_top:controller.lcd_data
+lcd_data[3] <= lcd_controller_top:controller.lcd_data
+lcd_data[4] <= lcd_controller_top:controller.lcd_data
+lcd_data[5] <= lcd_controller_top:controller.lcd_data
+lcd_data[6] <= lcd_controller_top:controller.lcd_data
+lcd_data[7] <= lcd_controller_top:controller.lcd_data
+lcd_rs <= lcd_controller_top:controller.lcd_rs
+lcd_rw <= lcd_controller_top:controller.lcd_rw
+lcd_e <= lcd_controller_top:controller.lcd_e
 
 
 |module_mini_cpu|ula:alu

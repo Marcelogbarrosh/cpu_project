@@ -30,44 +30,15 @@ module module_mini_cpu (
 	reg [15:0] 	to_storage2; 
 	wire			finish;	//indica se a operação e o armazenamento foi realizado para atualizar o LCD
 	reg			start = 0;	//indica se o armazemento de informação deve começar
-	reg			start_lcd = 1;	//indica se o lcd deve atualizar
-	reg			finish_lcd = 0;	//indica se o lcd já atualizou(permite que a cpu mude de estado)
-			
-	wire			done;		//verifica se o lcd ja atualizou no modulo
-	
-	//sequencial
-	always@ (*) begin
-		case(state)
-			LCD_FETCH: begin
-				if(!start_lcd && done) begin
-					finish_lcd <= 1;
-				end
-			end
-			
-			OFF: begin
-				if(!start_lcd && done) begin
-					finish_lcd <= 1;
-				end
-			end
-			
-			default: begin
-				finish_lcd <= 0;
-			end
-		endcase
-	end
 	
 	//combinacional
 	always@(posedge clk) begin
 		case(state)
-			OFF: begin		//estado desligado
-				if(!button_on == 1 && finish_lcd) begin
-					on <= 1;	//<- deve ligar
-					state <= PULSE;	//entra no estado de transição quando o botão for pressionado
-				end else if(!finish_lcd) begin	//enquanto o lcd nao atualizar, o estado permanecerá em desligado
-					start_lcd <= 0;	
-					state <= state;
-				end else if(finish_lcd) begin		//uma vez que o lcd atualiza, ele para
-					start_lcd <= 1;
+			OFF: begin
+				if(!button_on == 1) begin
+					on <= 1;
+					state <= PULSE;
+				end else begin
 					state <= state;
 				end
 			end
@@ -132,22 +103,16 @@ module module_mini_cpu (
 				end
 			end
 			
-			LCD_FETCH:
-				if(finish_lcd) begin
-					start_lcd <= 1;
-					state <= WAIT;
-				end
-				
-				else if(!start)begin
+			LCD_FETCH: begin
+				if(!start) begin
 					start <= 1;
 					state <= state;
-				end
-				
-				else if(start) begin
+				end else begin
 					ram[reg1] <= ram_reg;
-					start_lcd <= 0;
-					state <= state;
+					start <= 0;
+					state <= WAIT;
 				end
+			end
 			
 			default: state <= state;
 		endcase

@@ -289,17 +289,20 @@ module lcd_controller_top (
     // -----------------------------------------------------------------------
     // Estados da FSM principal
     // -----------------------------------------------------------------------
-    localparam [2:0]
-        S_WAIT_INIT  = 3'd0,
-        S_PREPARE    = 3'd1,
-        S_PULSE_E    = 3'd2,
-        S_WAIT       = 3'd3,
-        S_DONE       = 3'd4,
-		  S_LINHA2     = 3'd5,
-		  S_CMD_PULSE  = 3'd6,
-		  S_CMD_WAIT   = 3'd7;
+    localparam [3:0]
+        S_WAIT_INIT  = 4'd0,
+        S_PREPARE    = 4'd1,
+        S_PULSE_E    = 4'd2,
+        S_WAIT       = 4'd3,
+        S_DONE       = 4'd4,
+		  S_LINHA2     = 4'd5,
+		  S_CMD_PULSE  = 4'd6,
+		  S_CMD_WAIT   = 4'd7,
+		  S_HOME       = 4'd8,    
+        S_HOME_PULSE = 4'd9,
+        S_HOME_WAIT  = 4'd10;
 
-    reg [2:0]  state, next_state;
+    reg [3:0]  state, next_state;
     reg [31:0] delay_cnt, next_delay_cnt;
     reg [4:0]  msg_index, next_msg_index; // até 31 caracteres
 
@@ -403,8 +406,28 @@ module lcd_controller_top (
             // ---------------------------------------------------------------
             S_DONE: begin
                 // Permanece nesse estado até reset
-                next_state = S_DONE;
+                next_state = S_HOME;
 					 sinal = 1;
+            end
+				S_HOME: begin
+                next_state = S_HOME_PULSE;
+                next_delay_cnt = DELAY_PULSE;
+            end
+            S_HOME_PULSE : begin
+                if (delay_cnt > 0)
+                    next_delay_cnt = delay_cnt - 1;
+                else begin
+                    next_state = S_HOME_WAIT;
+                    next_delay_cnt = DELAY_WRITE;
+                end
+            end
+            S_HOME_WAIT : begin
+                if (delay_cnt > 0)
+                    next_delay_cnt = delay_cnt - 1;
+                else begin
+                    next_state = S_PREPARE;
+                    next_msg_index = 5'd0; // Recomeça a escrever o array
+                end
             end
 
             default: begin
@@ -491,6 +514,24 @@ module lcd_controller_top (
 					wr_rw = 1'b0; 
 					wr_e = 1'b0;
 				end
+				S_HOME: begin
+                wr_data = 8'h80; // Comando HD44780: Return to Home
+                wr_rs = 1'b0;
+                wr_rw = 1'b0;
+                wr_e = 1'b0;
+            end
+            S_HOME_PULSE: begin
+                wr_data = 8'h80;
+                wr_rs = 1'b0;
+                wr_rw = 1'b0;
+                wr_e = 1'b1;
+            end
+            S_HOME_WAIT: begin
+                wr_data = 8'h80;
+                wr_rs = 1'b0;
+                wr_rw = 1'b0;
+                wr_e = 1'b0;
+            end
 
             default: begin
                 // outros estados: controlador principal não mexe no LCD
@@ -499,6 +540,7 @@ module lcd_controller_top (
                 wr_e  = 1'b0;
                 wr_data = 8'h00;
             end
+				
         endcase
     end
 endmodule
