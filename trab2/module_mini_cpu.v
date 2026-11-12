@@ -30,25 +30,16 @@ module module_mini_cpu (
 	reg [15:0] 	to_storage2; 
 	wire			finish;	//indica se a operação e o armazenamento foi realizado para atualizar o LCD
 	reg			start = 0;	//indica se o armazemento de informação deve começar
-	reg			start_lcd = 1;	//indica se o lcd deve atualizar
-	reg			finish_lcd = 0;	//indica se o lcd já atualizou(permite que a cpu mude de estado)
+	reg			start_lcd = 0;	//indica se o lcd deve atualizar
+	reg			rst = 1;	//pulso para simular o rst do lcd
+	reg			finish_lcd = 1;	//indica se o lcd já atualizou(permite que a cpu mude de estado)
 			
 	wire			done;		//verifica se o lcd ja atualizou no modulo
 	
 	//sequencial
 	always@ (*) begin
 		case(state)
-			LCD_FETCH: begin
-				if(!start_lcd && done) begin
-					finish_lcd <= 1;
-				end
-			end
-			
-			OFF: begin
-				if(!start_lcd && done) begin
-					finish_lcd <= 1;
-				end
-			end
+			LCD_FETCH: if(start_lcd && done) finish_lcd <= 1;
 			
 			default: begin
 				finish_lcd <= 0;
@@ -60,30 +51,37 @@ module module_mini_cpu (
 	always@(posedge clk) begin
 		case(state)
 			OFF: begin		//estado desligado
-				if(!button_on == 1 && finish_lcd) begin
+				if(!button_on) begin
 					on <= 1;	//<- deve ligar
 					state <= PULSE;	//entra no estado de transição quando o botão for pressionado
-				end else if(!finish_lcd) begin	//enquanto o lcd nao atualizar, o estado permanecerá em desligado
-					start_lcd <= 0;	
-					state <= state;
-				end else if(finish_lcd) begin		//uma vez que o lcd atualiza, ele para
-					start_lcd <= 1;
+				end else begin
+					rst <= 1;
 					state <= state;
 				end
 			end
 				
 			PULSE: begin		//transição Wait <-> OFF ou Wait <-> Decode quando o botão for solto
-				if(on == 1 && !button_on == 0) state <= WAIT;
-				else if(on == 0 && !button_on == 0) state <= OFF;
-				else if(send == 1 && !button_send == 0) begin
+				if(on && button_on) begin
+					rst <= 1;
+					state <= WAIT;
+				end
+				else if(!on && button_on) begin
+					rst <= 1;
+					state <= OFF;
+				end
+				
+				else if(on && send && button_send) begin
 					send <= 0;
 					state <= DECODE;
 				end
-				else state <= state;
+				else begin
+					rst <= 0;
+					state <= state;
+				end
 			end
 			
 			WAIT: begin		//estado de espera da entrada
-				if(!button_send == 1) begin
+				if(!button_send) begin
 					send <= 1; //<- está enviando uma entrada
 					state <= PULSE;
 				end
@@ -94,9 +92,10 @@ module module_mini_cpu (
 				end
 				
 				else begin
-					state <= state;
 					start <= 0;
+					state <= state;
 				end
+				rst <= 1;
 			end
 			
 			DECODE: begin		//divide a entrada para seus respectivos lugares para a operação
@@ -175,18 +174,18 @@ module module_mini_cpu (
 	
 	lcd_controller_top controller (
 		.clk						(clk),
-		.rst						(start_lcd),
+		.rst						(button_on),
 		.opcode					(opcode),
 		.destino					(reg1),
 		.valor_destino			(ram_reg),
 		.button_on				(button_on),
 		.button_send			(button_send),
     // Saídas para o LCD
-		.lcd_data					(lcd_data),
+		.lcd_data				(lcd_data),
 		.lcd_rs					(lcd_rs),
 		.lcd_rw					(lcd_rw),
-		.lcd_e						(lcd_e),
-		.sinal						(done)
+		.lcd_e					(lcd_e),
+		.sinal					(done)
 	);
 	
 	

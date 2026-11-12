@@ -44,11 +44,99 @@
 					"strict" : false
 				},
 				{
-					"name" : "button_send",
+					"name" : "sinal",
 					"strict" : false
 				},
 				{
-					"name" : "button_on",
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[15]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[14]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[13]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[12]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[11]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[10]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[9]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[8]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[7]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[6]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[5]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[4]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[3]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[1]",
+					"strict" : false
+				},
+				{
+					"name" : "valor_destino[0]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[1]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[2]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[0]",
+					"strict" : false
+				},
+				{
+					"name" : "destino[3]",
 					"strict" : false
 				},
 				{
@@ -56,67 +144,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[16]",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
-					"name" : "data[17]",
+					"name" : "button_send",
 					"strict" : false
 				},
 				{
-					"name" : "data[15]",
-					"strict" : false
-				},
-				{
-					"name" : "data[14]",
-					"strict" : false
-				},
-				{
-					"name" : "data[12]",
-					"strict" : false
-				},
-				{
-					"name" : "data[11]",
-					"strict" : false
-				},
-				{
-					"name" : "data[13]",
-					"strict" : false
-				},
-				{
-					"name" : "data[8]",
-					"strict" : false
-				},
-				{
-					"name" : "data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "data[10]",
-					"strict" : false
-				},
-				{
-					"name" : "data[9]",
-					"strict" : false
-				},
-				{
-					"name" : "data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "data[5]",
+					"name" : "button_on",
 					"strict" : false
 				}
 			]
