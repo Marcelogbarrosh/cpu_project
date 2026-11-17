@@ -89,7 +89,6 @@ set_location_assignment PIN_M2 -to lcd_rs
 set_location_assignment PIN_R24 -to button_on
 set_location_assignment PIN_N21 -to button_send
 set_location_assignment PIN_Y2 -to clk
-set_global_assignment -name VERILOG_FILE teste.v
 set_global_assignment -name VERILOG_FILE module_mini_cpu.v
 set_global_assignment -name VERILOG_FILE ula.v
 set_global_assignment -name VERILOG_FILE memory.v
