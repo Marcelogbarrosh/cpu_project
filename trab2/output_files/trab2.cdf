@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("D:/Users/jdmm/Documents/GitHub/cpu_project/trab2/output_files/") File("trab2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("D:/Users/mgbh/Documents/GitHub/cpu_project/trab2/output_files/") File("trab2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

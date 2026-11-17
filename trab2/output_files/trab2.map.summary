@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Nov 12 17:38:15 2026
+Analysis & Synthesis Status : Successful - Tue Nov 17 14:53:06 2026
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : trab2
 Top-level Entity Name : module_mini_cpu
 Family : Cyclone IV E
-Total logic elements : 454
-    Total combinational functions : 428
-    Dedicated logic registers : 156
-Total registers : 156
+Total logic elements : 1,568
+    Total combinational functions : 1,084
+    Dedicated logic registers : 655
+Total registers : 655
 Total pins : 32
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
+Embedded Multiplier 9-bit elements : 2
 Total PLLs : 0
